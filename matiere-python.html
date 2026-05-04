@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Département Informatique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="top-bar">
+            <a href="#">International</a>
+            <a href="enseignants.html">Recherche et Faculté</a>
+            <span>FR | EN</span>
+        </div>
+        <nav class="main-nav">
+            <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
+                <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+            </a>
+            <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a class="active" href="formations.html">Formations</a></li>
+                <li><a href="enseignants.html">Corps enseignant</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a class="nav-button" href="formations.html">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html">Candidature</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-hero">
+            <a class="back-link" href="formations.html">← Retour à P1</a>
+            <p>| Niveau 01 — Prépa 1 · Matière 3 / 4</p>
+            <p class="eyebrow">P1 — FORMATION 03</p>
+            <h1>PYTHON</h1>
+            <p>Le langage le plus populaire au monde. Polyvalent, lisible, et incontournable pour débuter en programmation et en data science.</p>
+            <div class="tag-list">
+                <span>DÉBUTANT</span>
+                <span>IA &amp; DATA SCIENCE</span>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <article>
+                <strong>20H</strong>
+                <span>de cours</span>
+            </article>
+            <article>
+                <strong>12</strong>
+                <span>chapitres</span>
+            </article>
+            <article>
+                <strong>48</strong>
+                <span>exercices</span>
+            </article>
+            <article>
+                <strong>4.9</strong>
+                <span>note moy.</span>
+            </article>
+        </section>
+
+        <section class="section light-section course-grid">
+            <article>
+                <h2>PROGRAMME DU COURS</h2>
+                <ol class="number-list">
+                    <li>Variables, types &amp; opérateurs</li>
+                    <li>Boucles, conditions &amp; fonctions</li>
+                    <li>Listes, dictionnaires, tuples</li>
+                    <li>Programmation orientée objet</li>
+                    <li>Manipulation de fichiers &amp; JSON</li>
+                    <li>Librairies essentielles</li>
+                    <li>Gestion d'erreurs &amp; tests</li>
+                    <li>Mini-projets concrets</li>
+                </ol>
+            </article>
+            <article class="code-card">
+                <h2>APERÇU DU CODE</h2>
+                <pre><code># Formation Python — Leçon 1
+def saluer(nom: str) -> str:
+    return f"Bienvenue, {nom}!"
+
+etudiants = ["Alice", "Bob"]
+
+for e in etudiants:
+    print(saluer(e))</code></pre>
+            </article>
+        </section>
+
+        <section class="section blue-section">
+            <div class="cards-grid two-columns">
+                <article class="info-card">
+                    <h2>POURQUOI PYTHON ?</h2>
+                    <p>Langage n°1 mondial selon TIOBE. Utilisé par Google, Netflix et la NASA. Porte d'entrée vers l'IA, la data science et l'automatisation.</p>
+                </article>
+                <article class="info-card">
+                    <h2>CE QUE TU SAURAS FAIRE</h2>
+                    <ul>
+                        <li>Écrire des scripts Python complets</li>
+                        <li>Manipuler des structures de données</li>
+                        <li>Créer des fonctions réutilisables</li>
+                        <li>Lire et écrire des fichiers</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="course-navigation">
+                <a href="formations.html">← Matière précédente</a>
+                <a href="formations.html">Matière suivante →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer compact-footer">
+        <a class="footer-logo" href="index.html" aria-label="Accueil Efrei Paris">
+            <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+        </a>
+        <p>© 2026 Efrei Paris — Département Informatique</p>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="about.html">À propos</a>
+        </nav>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

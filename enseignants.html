@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corps enseignant - Département Informatique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="top-bar">
+            <a href="#">International</a>
+            <a href="#">Recherche et Faculté</a>
+            <span>FR | EN</span>
+        </div>
+        <nav class="main-nav">
+            <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
+                <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+            </a>
+            <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a class="active" href="enseignants.html">Corps enseignant</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a class="nav-button" href="formations.html">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html">Candidature</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p class="page-number">03 / CORPS ENSEIGNANT</p>
+            <p class="breadcrumb">Accueil › Corps enseignant</p>
+            <h1>Corps enseignant</h1>
+            <p>Enseignants-chercheurs et intervenants du département informatique.</p>
+        </section>
+
+        <section class="stats-section">
+            <article>
+                <strong>15</strong>
+                <span>Enseignants</span>
+            </article>
+            <article>
+                <strong>3</strong>
+                <span>Axes recherche</span>
+            </article>
+            <article>
+                <strong>65+</strong>
+                <span>Doctorants</span>
+            </article>
+        </section>
+
+        <section class="section light-section">
+            <p class="hint">▶ Survolez ou cliquez une carte pour voir les matières enseignées.</p>
+            <div class="filter-bar">
+                <button class="filter-button active" type="button" data-filter="all">Tous</button>
+                <button class="filter-button" type="button" data-filter="data">Data &amp; IA</button>
+                <button class="filter-button" type="button" data-filter="security">Réseaux &amp; Sécurité</button>
+                <button class="filter-button" type="button" data-filter="dev">Développement</button>
+                <button class="filter-button" type="button" data-filter="systems">Systèmes</button>
+            </div>
+
+            <div class="faculty-layout">
+                <div class="teacher-list">
+                    <article class="teacher-card interactive-teacher" data-category="data" data-subjects="Algorithmique, Structures de données, Complexité">
+                        <span>BC</span>
+                        <h3>Ben Khelil C.</h3>
+                        <p>Enseignante-chercheuse</p>
+                        <small>Survol → matières</small>
+                    </article>
+                    <article class="teacher-card interactive-teacher" data-category="dev" data-subjects="Java OOP, Design Patterns, Génie logiciel">
+                        <span>GW</span>
+                        <h3>Gaaloul W.</h3>
+                        <p>Enseignant</p>
+                        <small>Survol → matières</small>
+                    </article>
+                    <article class="teacher-card interactive-teacher" data-category="security" data-subjects="Réseaux, Protocoles, Sécurité réseau">
+                        <span>KK</span>
+                        <h3>Klai K.</h3>
+                        <p>Enseignant</p>
+                        <small>Survol → matières</small>
+                    </article>
+                    <article class="teacher-card interactive-teacher" data-category="systems" data-subjects="Architecture, Systèmes embarqués, Linux">
+                        <span>TL</span>
+                        <h3>Trebaul L.</h3>
+                        <p>Enseignante</p>
+                        <small>Survol → matières</small>
+                    </article>
+                    <article class="teacher-card interactive-teacher" data-category="dev" data-subjects="Développement web, JavaScript, Interfaces">
+                        <span>WT</span>
+                        <h3>Winstanley T.</h3>
+                        <p>Enseignant</p>
+                        <small>Survol → matières</small>
+                    </article>
+                    <article class="teacher-card interactive-teacher" data-category="data" data-subjects="Machine Learning, Data Mining, Python">
+                        <span>EM</span>
+                        <h3>Elloumi M.</h3>
+                        <p>Enseignante</p>
+                        <small>Survol → matières</small>
+                    </article>
+                </div>
+                <aside class="subjects-box">
+                    <h2>MATIÈRES ENSEIGNÉES</h2>
+                    <ul id="subjects-list">
+                        <li>Algorithmique</li>
+                        <li>Structures de données</li>
+                        <li>Complexité</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section blue-section">
+            <div class="section-title">
+                <p class="eyebrow">RECHERCHE</p>
+                <h2>Axes de recherche du laboratoire</h2>
+            </div>
+            <div class="cards-grid three-columns">
+                <article class="info-card">
+                    <p>AXE 1</p>
+                    <h3>Données &amp; Intelligence Artificielle</h3>
+                    <p>Ghassany · Charrad · Hammoud · Bougeroua · Elloumi</p>
+                </article>
+                <article class="info-card">
+                    <p>AXE 2</p>
+                    <h3>Sécurité, Résilience &amp; Confiance numérique</h3>
+                    <p>Charroux · Bou Nader · Yahiaoui · Ben Khelil</p>
+                </article>
+                <article class="info-card">
+                    <p>AXE 3</p>
+                    <h3>Réseaux de Communication</h3>
+                    <p>Aït El Mahjoub · Klai · Rakotonarivo · Barros Pereira</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer compact-footer">
+        <a class="footer-logo" href="index.html" aria-label="Accueil Efrei Paris">
+            <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+        </a>
+        <p>© 2026 Efrei Paris — Département Informatique</p>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="about.html">À propos</a>
+        </nav>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
