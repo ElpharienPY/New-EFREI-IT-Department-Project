@@ -7,28 +7,65 @@ if (menuButton && navLinks) {
     });
 }
 
-const levelsTrack = document.querySelector("#levels-track");
-const scrollButtons = document.querySelectorAll(".scroll-btn");
+// ── Header : masquer la top-bar au scroll ──
+const siteHeader = document.querySelector(".site-header");
+const topBar = document.querySelector(".top-bar");
+const levelsStickySection = document.querySelector(".levels-sticky-section");
 
-scrollButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        if (!levelsTrack) return;
+function syncHeaderOffset() {
+    if (!siteHeader || !levelsStickySection) return;
+    const h = siteHeader.offsetHeight;
+    levelsStickySection.style.top = h + "px";
+    levelsStickySection.style.height = `calc(100vh - ${h}px)`;
+}
 
-        const direction = button.dataset.direction === "left" ? -1 : 1;
-        levelsTrack.scrollBy({
-            left: direction * 340,
-            behavior: "smooth"
-        });
-    });
+// Recalcule l'offset une fois la transition CSS terminée
+if (topBar) {
+    topBar.addEventListener("transitionend", syncHeaderOffset);
+}
+
+window.addEventListener("scroll", () => {
+    if (siteHeader) {
+        siteHeader.classList.toggle("scrolled", window.scrollY > 10);
+    }
 });
 
-if (levelsTrack) {
-    levelsTrack.addEventListener("wheel", (event) => {
-        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+// ── Pinned horizontal scroll — Niveaux ──
+const levelsPinnedTrack = document.getElementById("levels-track");
+const levelsStrip = document.getElementById("levels-strip");
 
-        event.preventDefault();
-        levelsTrack.scrollLeft += event.deltaY;
-    }, { passive: false });
+if (levelsPinnedTrack && levelsStrip) {
+    let totalWidth = levelsStrip.scrollWidth;
+    let ticking = false;
+
+    function updateLevelsScroll() {
+        const trackHeight = levelsPinnedTrack.offsetHeight - window.innerHeight;
+        if (trackHeight <= 0) return;
+
+        const rect = levelsPinnedTrack.getBoundingClientRect();
+        const maxScroll = totalWidth - window.innerWidth;
+        const progress = Math.min(Math.max(-rect.top / trackHeight, 0), 1);
+        levelsStrip.style.transform = `translateX(${-progress * maxScroll}px)`;
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateLevelsScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        totalWidth = levelsStrip.scrollWidth;
+        syncHeaderOffset();
+        updateLevelsScroll();
+    });
+
+    syncHeaderOffset();
+    updateLevelsScroll();
 }
 
 const filterButtons = document.querySelectorAll(".filter-button");
