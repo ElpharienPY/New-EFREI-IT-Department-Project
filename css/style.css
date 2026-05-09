@@ -1519,3 +1519,391 @@ a {
         font-size: 1.5rem;
     }
 }
+
+/* ========================================
+   OFFICE HOURS CALENDAR STYLING
+   ======================================== */
+
+.office-hours-section {
+    padding: 4rem 2rem;
+}
+
+/* Controls */
+.office-hours-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.office-hours-controls {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.department-filter,
+.professor-filter {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.department-filter label,
+.professor-filter label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.department-filter select,
+.professor-filter input {
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.department-filter select:focus,
+.professor-filter input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Calendar Wrapper */
+.calendar-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.calendar-nav-btn {
+    padding: 0.75rem 1.5rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.calendar-nav-btn:hover {
+    background: #0066cc;
+    color: white;
+    border-color: #0066cc;
+}
+
+.week-display {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    overflow-x: auto;
+}
+
+.calendar-header,
+.calendar-row {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 1fr);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.calendar-header {
+    position: sticky;
+    top: 0;
+    background: #f9f9f9;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.time-column,
+.day-column,
+.time-slot,
+.day-slot {
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+}
+
+.time-column:last-child,
+.day-column:last-child,
+.time-slot:last-child,
+.day-slot:last-child {
+    border-right: none;
+}
+
+.day-column {
+    font-size: 0.95rem;
+    color: #666;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-slot {
+    font-size: 0.85rem;
+    color: #999;
+    background: #fafafa;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.day-slot {
+    min-height: 50px;
+    position: relative;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Professor Badge */
+.professor-badge {
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    color: white;
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.professor-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.badge-initials {
+    font-weight: 700;
+    min-width: 20px;
+}
+
+.badge-name {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .badge-name {
+        display: inline;
+    }
+}
+
+/* Office Hours List */
+.office-hours-list {
+    padding: 2rem;
+}
+
+.office-hours-list h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.office-hours-items {
+    display: grid;
+    gap: 1rem;
+}
+
+.office-hours-item {
+    background: #f9f9f9;
+    border-left: 4px solid #0066cc;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.office-hours-item:hover {
+    background: #f0f5ff;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
+}
+
+.office-hours-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge-initials {
+    background: #0066cc;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.professor-info h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.professor-title {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+.office-hours-details {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.office-hours-details p {
+    margin: 0.4rem 0;
+}
+
+.office-hours-details strong {
+    color: #333;
+}
+
+.office-hours-details a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.office-hours-details a:hover {
+    color: #0052a3;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calendar-header,
+    .calendar-row {
+        grid-template-columns: 60px repeat(5, 1fr);
+    }
+
+    .time-column,
+    .day-column,
+    .time-slot,
+    .day-slot {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .professor-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem;
+    }
+
+    .badge-initials {
+        min-width: 16px;
+    }
+
+    .calendar-controls {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .calendar-nav-btn {
+        width: 100%;
+    }
+
+    .week-display {
+        font-size: 1rem;
+    }
+
+    .office-hours-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .department-filter,
+    .professor-filter {
+        min-width: 100%;
+    }
+
+    .office-hours-item {
+        padding: 0.75rem;
+    }
+
+    .office-hours-header {
+        gap: 0.75rem;
+    }
+
+    .badge-initials {
+        width: 35px;
+        height: 35px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-header,
+    .calendar-row {
+        grid-template-columns: 50px repeat(5, 1fr);
+    }
+
+    .day-column {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .time-slot,
+    .day-slot {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    .professor-badge {
+        font-size: 0.65rem;
+        padding: 0.2rem;
+    }
+
+    .day-slot {
+        min-height: 40px;
+    }
+
+    .office-hours-section {
+        padding: 2rem 1rem;
+    }
+
+    .office-hours-list {
+        padding: 1rem;
+    }
+
+    .office-hours-item {
+        padding: 0.5rem;
+    }
+
+    .office-hours-details {
+        font-size: 0.85rem;
+    }
+}
