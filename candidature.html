@@ -9,9 +9,13 @@
 <body>
     <header class="site-header">
         <div class="top-bar">
-            <a href="#">International</a>
-            <a href="enseignants.html">Recherche et Faculté</a>
-            <span>FR | EN</span>
+            <a href="#" data-i18n="topbar_international">International</a>
+            <a href="enseignants.html" data-i18n="topbar_research">Recherche et Faculté</a>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
         </div>
         <nav class="main-nav">
             <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
@@ -19,12 +23,12 @@
             </a>
             <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="formations.html">Formations</a></li>
-                <li><a href="enseignants.html">Corps enseignant</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a class="nav-button" href="formations.html">Brochure</a></li>
-                <li><a class="nav-button yellow active" href="candidature.html">Candidature</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="formations.html" data-i18n="nav_formations">Formations</a></li>
+                <li><a href="enseignants.html" data-i18n="nav_faculty">Corps enseignant</a></li>
+                <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                <li><a class="nav-button" href="formations.html" data-i18n="nav_brochure">Brochure</a></li>
+                <li><a class="nav-button yellow active" href="candidature.html" data-i18n="nav_apply">Candidature</a></li>
             </ul>
         </nav>
     </header>
@@ -32,94 +36,191 @@
     <main>
         <section class="page-hero">
             <p class="page-number">05 / CANDIDATURE</p>
-            <p class="breadcrumb">Accueil › Candidature</p>
-            <h1>Comment postuler à l'Efrei ?</h1>
-            <p>Voici les étapes essentielles pour choisir la bonne procédure, préparer votre dossier et candidater à une formation Efrei.</p>
+            <p class="breadcrumb" data-i18n="apply_breadcrumb">Accueil › Candidature</p>
+            <h1 data-i18n="apply_h1">Comment postuler à l'Efrei ?</h1>
+            <p data-i18n="apply_desc">Voici les étapes essentielles pour choisir la bonne procédure, préparer votre dossier et candidater à une formation Efrei.</p>
             <div class="hero-actions">
-                <a class="button primary" href="https://www.efrei.fr/candidature/" target="_blank" rel="noreferrer">Déposer ma candidature</a>
-                <a class="button secondary" href="formations.html">Voir les formations</a>
+                <a class="button primary" href="https://www.efrei.fr/candidature/" target="_blank" rel="noreferrer" data-i18n="btn_apply_online">Déposer ma candidature</a>
+                <a class="button secondary" href="formations.html" data-i18n="btn_see_formations">Voir les formations</a>
             </div>
         </section>
 
+        <div class="campus-banner-strip">
+            <img src="img/campus-rooftop.jpg" alt="Campus Efrei Paris Villejuif" loading="lazy">
+            <img src="img/campus-amphi.jpeg" alt="Amphithéâtre Efrei" loading="lazy">
+            <img src="img/campus-etu2.JPG" alt="Étudiants en informatique au travail" loading="lazy">
+        </div>
+
         <section class="section light-section">
             <div class="section-title">
-                <p class="eyebrow dark">ÉTAPES</p>
-                <h2>La candidature en 4 étapes</h2>
-                <p>Le bon parcours dépend de votre niveau d'études et du programme visé.</p>
+                <p class="eyebrow dark" data-i18n="steps_eyebrow">ÉTAPES</p>
+                <h2 data-i18n="steps_h2">La candidature en 4 étapes</h2>
+                <p data-i18n="steps_desc">Le bon parcours dépend de votre niveau d'études et du programme visé.</p>
             </div>
 
             <div class="cards-grid four-columns">
                 <article class="step-card">
                     <span>1</span>
-                    <h3>Choisir votre formation</h3>
-                    <p>Identifiez le programme qui correspond à votre profil : Prépa intégrée, Cycle Ingénieur, BTS, Bachelor ou Mastère.</p>
+                    <h3 data-i18n="step1_h3">Choisir votre formation</h3>
+                    <p data-i18n="step1_p">Identifiez le programme qui correspond à votre profil : Prépa intégrée, Cycle Ingénieur, BTS, Bachelor ou Mastère.</p>
                 </article>
                 <article class="step-card">
                     <span>2</span>
-                    <h3>Vérifier la procédure</h3>
-                    <p>Selon votre situation, la candidature passe par Parcoursup, Puissance Alpha, SCEI ou directement par le site Efrei.</p>
+                    <h3 data-i18n="step2_h3">Vérifier la procédure</h3>
+                    <p data-i18n="step2_p">Selon votre situation, la candidature passe par Parcoursup, Puissance Alpha, SCEI ou directement par le site Efrei.</p>
                 </article>
                 <article class="step-card">
                     <span>3</span>
-                    <h3>Préparer le dossier</h3>
-                    <p>Rassemblez vos relevés de notes, diplôme, CV, lettre de motivation, pièce d'identité et documents complémentaires.</p>
+                    <h3 data-i18n="step3_h3">Préparer le dossier</h3>
+                    <p data-i18n="step3_p">Rassemblez vos relevés de notes, diplôme, CV, lettre de motivation, pièce d'identité et documents complémentaires.</p>
                 </article>
                 <article class="step-card">
                     <span>4</span>
-                    <h3>Suivre la réponse</h3>
-                    <p>Après l'envoi, le dossier est étudié. Vous pouvez être convoqué à un entretien ou recevoir une réponse par mail.</p>
+                    <h3 data-i18n="step4_h3">Suivre la réponse</h3>
+                    <p data-i18n="step4_p">Après l'envoi, le dossier est étudié. Vous pouvez être convoqué à un entretien ou recevoir une réponse par mail.</p>
                 </article>
             </div>
         </section>
 
         <section class="section blue-section">
             <div class="section-title">
-                <p class="eyebrow">PROCÉDURES</p>
-                <h2>Quelle procédure choisir ?</h2>
+                <p class="eyebrow" data-i18n="procedures_eyebrow">PROCÉDURES</p>
+                <h2 data-i18n="procedures_h2">Quelle procédure choisir ?</h2>
             </div>
 
             <div class="cards-grid three-columns">
                 <article class="info-card">
-                    <p>TERMINALE</p>
-                    <h3>Post-bac</h3>
-                    <p>Pour une entrée après le bac, ajoutez Efrei dans vos voeux Parcoursup. Le Programme Grande École d'ingénieurs passe par le Concours Puissance Alpha.</p>
+                    <p data-i18n="proc1_label">TERMINALE</p>
+                    <h3 data-i18n="proc1_h3">Post-bac</h3>
+                    <p data-i18n="proc1_p">Pour une entrée après le bac, ajoutez Efrei dans vos voeux Parcoursup. Le Programme Grande École d'ingénieurs passe par le Concours Puissance Alpha.</p>
                 </article>
                 <article class="info-card">
-                    <p>CPGE</p>
-                    <h3>Post-prépa</h3>
-                    <p>Les étudiants de classes préparatoires passent par le portail SCEI, en sélectionnant le concours Puissance Alpha selon leur filière.</p>
+                    <p data-i18n="proc2_label">CPGE</p>
+                    <h3 data-i18n="proc2_h3">Post-prépa</h3>
+                    <p data-i18n="proc2_p">Les étudiants de classes préparatoires passent par le portail SCEI, en sélectionnant le concours Puissance Alpha selon leur filière.</p>
                 </article>
                 <article class="info-card">
-                    <p>BAC DÉJÀ OBTENU</p>
-                    <h3>Admission parallèle</h3>
-                    <p>Pour une réorientation, un Bachelor, un Mastère ou certaines admissions parallèles, déposez votre candidature directement sur le site Efrei.</p>
+                    <p data-i18n="proc3_label">BAC DÉJÀ OBTENU</p>
+                    <h3 data-i18n="proc3_h3">Admission parallèle</h3>
+                    <p data-i18n="proc3_p">Pour une réorientation, un Bachelor, un Mastère ou certaines admissions parallèles, déposez votre candidature directement sur le site Efrei.</p>
                 </article>
             </div>
         </section>
 
         <section class="section light-section application-layout">
             <div>
-                <p class="eyebrow dark">DOSSIER</p>
-                <h2>Documents à préparer</h2>
-                <p>Les pièces demandées peuvent varier selon la formation, mais prévoyez généralement :</p>
+                <p class="eyebrow dark" data-i18n="docs_eyebrow">DOSSIER</p>
+                <h2 data-i18n="docs_h2">Documents à préparer</h2>
+                <p data-i18n="docs_desc">Les pièces demandées peuvent varier selon la formation, mais prévoyez généralement :</p>
                 <ul class="number-list">
-                    <li>une pièce d'identité, un visa ou un titre de séjour valide ;</li>
-                    <li>une photo d'identité ;</li>
-                    <li>le dernier diplôme obtenu et les relevés de notes récents ;</li>
-                    <li>le relevé de notes du bac ;</li>
-                    <li>un CV et une lettre de motivation ;</li>
-                    <li>un avis de poursuite d'études pour le cycle ingénieur ;</li>
-                    <li>une lettre de recommandation si vous en avez une.</li>
+                    <li data-i18n="docs_li1">une pièce d'identité, un visa ou un titre de séjour valide ;</li>
+                    <li data-i18n="docs_li2">une photo d'identité ;</li>
+                    <li data-i18n="docs_li3">le dernier diplôme obtenu et les relevés de notes récents ;</li>
+                    <li data-i18n="docs_li4">le relevé de notes du bac ;</li>
+                    <li data-i18n="docs_li5">un CV et une lettre de motivation ;</li>
+                    <li data-i18n="docs_li6">un avis de poursuite d'études pour le cycle ingénieur ;</li>
+                    <li data-i18n="docs_li7">une lettre de recommandation si vous en avez une.</li>
                 </ul>
             </div>
 
             <aside class="subjects-box">
-                <h2>Service Admissions</h2>
+                <h2 data-i18n="admissions_h2">Service Admissions</h2>
                 <p>Paris : +33 1 88 28 90 01</p>
                 <p>Bordeaux : +33 5 82 06 01 62</p>
                 <p>Email : admissions@efrei.fr</p>
-                <a class="button primary" href="https://www.efrei.fr/candidature/" target="_blank" rel="noreferrer">Candidater en ligne</a>
+                <a class="button primary" href="https://www.efrei.fr/candidature/" target="_blank" rel="noreferrer" data-i18n="btn_apply_link">Candidater en ligne</a>
             </aside>
+        </section>
+
+        <section class="section blue-section">
+            <div class="section-title">
+                <p class="eyebrow" data-i18n="form_eyebrow">CONTACT</p>
+                <h2 data-i18n="form_h2">Demande d'information</h2>
+                <p data-i18n="form_desc">Une question sur une formation ? Remplissez ce formulaire, le service admissions vous répondra sous 48h.</p>
+            </div>
+
+            <form class="contact-form" id="contact-form" novalidate>
+                <div class="form-row two-col">
+                    <div class="form-group">
+                        <label for="prenom"><span data-i18n="label_prenom">Prénom</span> <span aria-hidden="true">*</span></label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" data-i18n-placeholder="placeholder_prenom" autocomplete="given-name" required>
+                        <span class="field-error" id="prenom-error" role="alert"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="nom"><span data-i18n="label_nom">Nom</span> <span aria-hidden="true">*</span></label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" data-i18n-placeholder="placeholder_nom" autocomplete="family-name" required>
+                        <span class="field-error" id="nom-error" role="alert"></span>
+                    </div>
+                </div>
+
+                <div class="form-row two-col">
+                    <div class="form-group">
+                        <label for="email"><span data-i18n="label_email">Email</span> <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="vous@exemple.fr" data-i18n-placeholder="placeholder_email" autocomplete="email" required>
+                        <span class="field-error" id="email-error" role="alert"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone"><span data-i18n="label_tel">Téléphone</span></label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" data-i18n-placeholder="placeholder_tel" autocomplete="tel">
+                        <span class="field-error" id="telephone-error" role="alert"></span>
+                    </div>
+                </div>
+
+                <div class="form-row two-col">
+                    <div class="form-group">
+                        <label for="niveau"><span data-i18n="label_niveau">Niveau actuel</span> <span aria-hidden="true">*</span></label>
+                        <select id="niveau" name="niveau" required>
+                            <option value="" data-i18n="opt_select">-- Sélectionnez --</option>
+                            <option value="terminale" data-i18n="opt_terminale">Terminale</option>
+                            <option value="cpge" data-i18n="opt_cpge">Classe préparatoire (CPGE)</option>
+                            <option value="bts" data-i18n="opt_bts">BTS / DUT / BUT</option>
+                            <option value="licence" data-i18n="opt_licence">Licence / Bachelor</option>
+                            <option value="master" data-i18n="opt_master">Master / Mastère</option>
+                            <option value="autre" data-i18n="opt_autre">Autre</option>
+                        </select>
+                        <span class="field-error" id="niveau-error" role="alert"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="formation"><span data-i18n="label_formation">Formation visée</span> <span aria-hidden="true">*</span></label>
+                        <select id="formation" name="formation" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <optgroup label="PGE — Programme Grande École">
+                                <option value="p1">P1 — Prépa 1</option>
+                                <option value="p2">P2 — Prépa 2</option>
+                                <option value="ing1">ING1</option>
+                                <option value="ing2">ING2</option>
+                                <option value="ing3">ING3</option>
+                            </optgroup>
+                            <optgroup label="Formations PEX">
+                                <option value="bachelor">Bachelor (B1–B3)</option>
+                                <option value="mastere">Mastère (M1/M2)</option>
+                                <option value="bts">BTS SIO</option>
+                            </optgroup>
+                        </select>
+                        <span class="field-error" id="formation-error" role="alert"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message"><span data-i18n="label_message">Message</span> <span aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" rows="5" placeholder="Décrivez votre situation et vos questions..." data-i18n-placeholder="placeholder_message" required></textarea>
+                    <span class="field-error" id="message-error" role="alert"></span>
+                </div>
+
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="rgpd" name="rgpd" required>
+                    <label for="rgpd"><span data-i18n="label_rgpd">J'accepte que mes données soient utilisées pour traiter ma demande.</span> <span aria-hidden="true">*</span></label>
+                    <span class="field-error" id="rgpd-error" role="alert"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="button primary" id="submit-btn" data-i18n="btn_submit">Envoyer ma demande</button>
+                </div>
+
+                <div class="form-success" id="form-success" hidden>
+                    <span data-i18n="form_success_msg">Demande envoyée ! Le service admissions vous contactera sous 48h.</span>
+                </div>
+            </form>
         </section>
     </main>
 
@@ -135,6 +236,7 @@
         </nav>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script src="js/animations.js"></script>
 </body>

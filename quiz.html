@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz d'orientation — Département Informatique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="top-bar">
+            <a href="#" data-i18n="topbar_international">International</a>
+            <a href="enseignants.html" data-i18n="topbar_research">Recherche et Faculté</a>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
+                <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+            </a>
+            <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="formations.html" data-i18n="nav_formations">Formations</a></li>
+                <li><a href="enseignants.html" data-i18n="nav_faculty">Corps enseignant</a></li>
+                <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                <li><a class="nav-button" href="formations.html" data-i18n="nav_brochure">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html" data-i18n="nav_apply">Candidature</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p class="page-number">06 / QUIZ</p>
+            <p class="breadcrumb" data-i18n="quiz_breadcrumb">Accueil › Quiz d'orientation</p>
+            <h1 data-i18n="quiz_h1">Quiz d'orientation</h1>
+            <p data-i18n="quiz_hero_desc">5 questions pour découvrir la filière qui te correspond.</p>
+        </section>
+
+        <section class="section light-section quiz-section">
+            <div class="quiz-container" role="region" aria-label="Quiz d'orientation filière">
+
+                <div class="quiz-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1" aria-label="Progression du quiz">
+                    <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+                </div>
+                <p class="quiz-counter" id="quiz-counter" aria-live="polite">Question 1 / 5</p>
+
+                <div class="quiz-questions" id="quiz-questions">
+
+                    <div class="quiz-question" id="q1">
+                        <h2 data-i18n="quiz_q1">Qu'est-ce qui t'attire le plus en informatique&nbsp;?</h2>
+                        <div class="quiz-answers">
+                            <button class="quiz-answer" type="button" data-score="data">
+                                <span class="qa-icon" aria-hidden="true">📊</span>
+                                <span data-i18n="quiz_q1_a1">Extraire des insights à partir de grandes quantités de données</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="it">
+                                <span class="qa-icon" aria-hidden="true">💻</span>
+                                <span data-i18n="quiz_q1_a2">Concevoir et développer des applications web ou mobiles</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="secu">
+                                <span class="qa-icon" aria-hidden="true">🔒</span>
+                                <span data-i18n="quiz_q1_a3">Comprendre et contrecarrer les cyberattaques</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="emb">
+                                <span class="qa-icon" aria-hidden="true">🤖</span>
+                                <span data-i18n="quiz_q1_a4">Programmer des systèmes physiques et des objets connectés</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" id="q2" hidden>
+                        <h2 data-i18n="quiz_q2">Tu ouvres ton ordinateur… que fais-tu en premier&nbsp;?</h2>
+                        <div class="quiz-answers">
+                            <button class="quiz-answer" type="button" data-score="data">
+                                <span class="qa-icon" aria-hidden="true">📈</span>
+                                <span data-i18n="quiz_q2_a1">Je lance Jupyter Notebook pour analyser un dataset</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="it">
+                                <span class="qa-icon" aria-hidden="true">⌨️</span>
+                                <span data-i18n="quiz_q2_a2">J'ouvre mon éditeur pour coder une nouvelle fonctionnalité</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="secu">
+                                <span class="qa-icon" aria-hidden="true">🛡️</span>
+                                <span data-i18n="quiz_q2_a3">Je scanne le réseau pour détecter des vulnérabilités</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="emb">
+                                <span class="qa-icon" aria-hidden="true">🔌</span>
+                                <span data-i18n="quiz_q2_a4">Je flashe un microcontrôleur pour tester mon montage</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" id="q3" hidden>
+                        <h2 data-i18n="quiz_q3">Quel profil te ressemble le plus&nbsp;?</h2>
+                        <div class="quiz-answers">
+                            <button class="quiz-answer" type="button" data-score="data">
+                                <span class="qa-icon" aria-hidden="true">🧮</span>
+                                <span data-i18n="quiz_q3_a1">Curieux, analytique, à l'aise avec les statistiques et les maths</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="it">
+                                <span class="qa-icon" aria-hidden="true">🎨</span>
+                                <span data-i18n="quiz_q3_a2">Créatif, pragmatique, orienté produit et expérience utilisateur</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="secu">
+                                <span class="qa-icon" aria-hidden="true">🕵️</span>
+                                <span data-i18n="quiz_q3_a3">Rigoureux, stratégique, attentif aux failles et aux détails</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="emb">
+                                <span class="qa-icon" aria-hidden="true">🔧</span>
+                                <span data-i18n="quiz_q3_a4">Bricoleur, inventif, passionné par le matériel et l'électronique</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" id="q4" hidden>
+                        <h2 data-i18n="quiz_q4">Quel projet te ferait le plus rêver&nbsp;?</h2>
+                        <div class="quiz-answers">
+                            <button class="quiz-answer" type="button" data-score="data">
+                                <span class="qa-icon" aria-hidden="true">🧠</span>
+                                <span data-i18n="quiz_q4_a1">Entraîner un modèle d'IA pour personnaliser des recommandations</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="it">
+                                <span class="qa-icon" aria-hidden="true">🚀</span>
+                                <span data-i18n="quiz_q4_a2">Lancer ta propre application SaaS de A à Z</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="secu">
+                                <span class="qa-icon" aria-hidden="true">🏦</span>
+                                <span data-i18n="quiz_q4_a3">Réaliser un audit de sécurité d'une infrastructure bancaire</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="emb">
+                                <span class="qa-icon" aria-hidden="true">🚁</span>
+                                <span data-i18n="quiz_q4_a4">Programmer un drone autonome capable d'éviter des obstacles</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question" id="q5" hidden>
+                        <h2 data-i18n="quiz_q5">Dans 5 ans, tu te vois comment&nbsp;?</h2>
+                        <div class="quiz-answers">
+                            <button class="quiz-answer" type="button" data-score="data">
+                                <span class="qa-icon" aria-hidden="true">📉</span>
+                                <span data-i18n="quiz_q5_a1">Data Scientist ou ML Engineer dans une grande entreprise tech</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="it">
+                                <span class="qa-icon" aria-hidden="true">🏗️</span>
+                                <span data-i18n="quiz_q5_a2">Lead Developer ou CTO d'une startup innovante</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="secu">
+                                <span class="qa-icon" aria-hidden="true">🔐</span>
+                                <span data-i18n="quiz_q5_a3">Expert en cybersécurité ou consultant pentesteur</span>
+                            </button>
+                            <button class="quiz-answer" type="button" data-score="emb">
+                                <span class="qa-icon" aria-hidden="true">✈️</span>
+                                <span data-i18n="quiz_q5_a4">Ingénieur systèmes embarqués dans l'aéronautique ou l'automobile</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="quiz-nav">
+                    <button class="button primary" type="button" id="quiz-next" disabled data-i18n="quiz_next">Suivant →</button>
+                </div>
+
+                <div class="quiz-result" id="quiz-result" hidden>
+                    <p class="quiz-result-label" data-i18n="quiz_result_label">Ta filière idéale</p>
+                    <div class="quiz-result-badge" id="result-badge" aria-hidden="true"></div>
+                    <h2 id="result-title">–</h2>
+                    <p id="result-desc">–</p>
+                    <div class="quiz-result-tags" id="result-tags"></div>
+                    <div class="quiz-result-actions">
+                        <a class="button primary" href="formations.html" data-i18n="quiz_result_cta">Découvrir les formations →</a>
+                        <button class="button secondary" type="button" id="quiz-restart" data-i18n="quiz_restart">Recommencer</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer compact-footer">
+        <a class="footer-logo" href="index.html" aria-label="Accueil Efrei Paris">
+            <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+        </a>
+        <p>© 2026 Efrei Paris — Département Informatique</p>
+        <nav>
+            <a href="index.html" data-i18n="nav_home">Accueil</a>
+            <a href="formations.html" data-i18n="nav_formations">Formations</a>
+            <a href="about.html" data-i18n="nav_about">À propos</a>
+        </nav>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

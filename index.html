@@ -9,10 +9,14 @@
 <body>
     <header class="site-header">
         <div class="top-bar">
-            <a href="#">International</a>
-            <a href="enseignants.html">Recherche et Faculté</a>
-            <a href="#">Entreprises</a>
-            <span>FR | EN</span>
+            <a href="#" data-i18n="topbar_international">International</a>
+            <a href="enseignants.html" data-i18n="topbar_research">Recherche et Faculté</a>
+            <a href="#" data-i18n="topbar_companies">Entreprises</a>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
         </div>
         <nav class="main-nav">
             <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
@@ -20,12 +24,12 @@
             </a>
             <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
             <ul class="nav-links">
-                <li><a class="active" href="index.html">Accueil</a></li>
-                <li><a href="formations.html">Formations</a></li>
-                <li><a href="enseignants.html">Corps enseignant</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a class="nav-button" href="formations.html">Brochure</a></li>
-                <li><a class="nav-button yellow" href="candidature.html">Candidature</a></li>
+                <li><a class="active" href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="formations.html" data-i18n="nav_formations">Formations</a></li>
+                <li><a href="enseignants.html" data-i18n="nav_faculty">Corps enseignant</a></li>
+                <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                <li><a class="nav-button" href="formations.html" data-i18n="nav_brochure">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html" data-i18n="nav_apply">Candidature</a></li>
             </ul>
         </nav>
     </header>
@@ -34,142 +38,172 @@
         <section class="hero hero-home">
             <div class="hero-text">
                 <p class="page-number">01 / LANDING PAGE</p>
-                <p class="eyebrow">▶ DÉPARTEMENT INFORMATIQUE</p>
-                <h1>Former les ingénieurs du numérique</h1>
-                <p>Excellence académique, expertise technique et ouverture internationale au service de votre avenir.</p>
+                <p class="eyebrow" data-i18n="hero_eyebrow">▶ DÉPARTEMENT INFORMATIQUE</p>
+                <h1 data-i18n="hero_h1">Former les ingénieurs du numérique</h1>
+                <p data-i18n="hero_desc">Excellence académique, expertise technique et ouverture internationale au service de votre avenir.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="formations.html">Découvrir les formations</a>
-                    <a class="button secondary" href="about.html">En savoir plus</a>
+                    <a class="button primary" href="formations.html" data-i18n="btn_discover_formations">Découvrir les formations</a>
+                    <a class="button secondary" href="about.html" data-i18n="btn_learn_more">En savoir plus</a>
+                    <a class="button secondary" href="quiz.html" data-i18n="btn_quiz">🎯 Quiz d'orientation</a>
                 </div>
             </div>
-            <div class="hero-photo" aria-label="Étudiants en informatique">
-                <div class="photo-overlay">
-                    <span>PHOTO ÉTUDIANTS</span>
-                </div>
-            </div>
+            <div class="hero-photo" role="img" aria-label="Étudiants en informatique"></div>
         </section>
 
-        <section class="stats-section">
-            <article>
+        <div class="stats-section">
+            <div>
                 <strong>5 700+</strong>
-                <span>Étudiants</span>
-            </article>
-            <article>
+                <span data-i18n="stat_students">Étudiants</span>
+            </div>
+            <div>
                 <strong>98%</strong>
-                <span>Taux d'insertion</span>
-            </article>
-            <article>
+                <span data-i18n="stat_insertion">Taux d'insertion</span>
+            </div>
+            <div>
                 <strong>90 ans</strong>
-                <span>D'excellence</span>
-            </article>
-        </section>
+                <span data-i18n="stat_excellence">D'excellence</span>
+            </div>
+        </div>
 
         <section class="section light-section">
             <div class="section-title">
-                <p class="eyebrow dark">FORMATIONS</p>
-                <h2>Un parcours pour chaque ambition</h2>
-                <p>Du BTS au diplôme d'ingénieur, toutes nos formations en informatique.</p>
+                <p class="eyebrow dark" data-i18n="index_formations_eyebrow">FORMATIONS</p>
+                <h2 data-i18n="index_formations_h2">Un parcours pour chaque ambition</h2>
+                <p data-i18n="index_formations_desc">Du BTS au diplôme d'ingénieur, toutes nos formations en informatique.</p>
             </div>
             <div class="cards-grid four-columns">
                 <article class="program-card">
                     <span>P</span>
-                    <h3>Prépa Intégrée</h3>
-                    <p>P1 &amp; P2 — Algorithmique, Python, C, développement web.</p>
-                    <a href="formations.html">▶ Voir le programme</a>
+                    <h3 data-i18n="prepa_h3">Prépa Intégrée</h3>
+                    <p data-i18n="prepa_desc">P1 &amp; P2 — Algorithmique, Python, C, développement web.</p>
+                    <a href="formations.html" data-i18n="btn_see_program">▶ Voir le programme</a>
                 </article>
                 <article class="program-card">
                     <span>I</span>
-                    <h3>Cycle Ingénieur</h3>
-                    <p>ING1 à ING3 — 4 filières et 16 majeures de spécialisation.</p>
-                    <a href="formations.html">▶ Voir le programme</a>
+                    <h3 data-i18n="ing_h3">Cycle Ingénieur</h3>
+                    <p data-i18n="ing_desc">ING1 à ING3 — 4 filières et 16 majeures de spécialisation.</p>
+                    <a href="formations.html" data-i18n="btn_see_program">▶ Voir le programme</a>
                 </article>
                 <article class="program-card">
                     <span>B</span>
-                    <h3>Bachelor</h3>
-                    <p>B1 à B3 — Informatique, cybersécurité, dev web et IA.</p>
-                    <a href="formations.html">▶ Voir le programme</a>
+                    <h3 data-i18n="bachelor_h3">Bachelor</h3>
+                    <p data-i18n="bachelor_desc">B1 à B3 — Informatique, cybersécurité, dev web et IA.</p>
+                    <a href="formations.html" data-i18n="btn_see_program">▶ Voir le programme</a>
                 </article>
                 <article class="program-card">
                     <span>M</span>
-                    <h3>Mastère</h3>
-                    <p>M1 &amp; M2 — Data engineering, cybersécurité, full stack.</p>
-                    <a href="formations.html">▶ Voir le programme</a>
+                    <h3 data-i18n="mastere_h3">Mastère</h3>
+                    <p data-i18n="mastere_desc">M1 &amp; M2 — Data engineering, cybersécurité, full stack.</p>
+                    <a href="formations.html" data-i18n="btn_see_program">▶ Voir le programme</a>
                 </article>
             </div>
         </section>
 
         <section class="section blue-section">
             <div class="section-title">
-                <p class="eyebrow">SPÉCIALISATIONS</p>
-                <h2>Choisissez votre filière</h2>
-                <p>En ING2 &amp; ING3, quatre grandes filières pour vous spécialiser.</p>
+                <p class="eyebrow" data-i18n="special_eyebrow">SPÉCIALISATIONS</p>
+                <h2 data-i18n="special_h2">Choisissez votre filière</h2>
+                <p data-i18n="special_desc">En ING2 &amp; ING3, quatre grandes filières pour vous spécialiser.</p>
             </div>
             <div class="cards-grid three-columns">
                 <article class="special-card">
-                    <p>FILIÈRE</p>
+                    <img class="special-card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Science — analytics">
+                    <p data-i18n="filiere_label">FILIÈRE</p>
                     <h3>Data Science</h3>
                     <ul>
                         <li>Data &amp; IA</li>
                         <li>Data Engineering</li>
                         <li>BI &amp; Analytics</li>
                     </ul>
-                    <a href="formations.html">▶ Découvrir la filière</a>
+                    <a href="formations.html" data-i18n="btn_discover_filiere">▶ Découvrir la filière</a>
                 </article>
                 <article class="special-card">
-                    <p>FILIÈRE</p>
+                    <img class="special-card-img" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Sécurité & Réseaux — cybersécurité">
+                    <p data-i18n="filiere_label">FILIÈRE</p>
                     <h3>Sécurité &amp; Réseaux</h3>
                     <ul>
                         <li>Cybersécurité</li>
                         <li>Réseaux</li>
                         <li>Confiance numérique</li>
                     </ul>
-                    <a href="formations.html">▶ Découvrir la filière</a>
+                    <a href="formations.html" data-i18n="btn_discover_filiere">▶ Découvrir la filière</a>
                 </article>
                 <article class="special-card">
-                    <p>FILIÈRE</p>
+                    <img class="special-card-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Systèmes embarqués — électronique">
+                    <p data-i18n="filiere_label">FILIÈRE</p>
                     <h3>Systèmes embarqués</h3>
                     <ul>
                         <li>Robotique</li>
                         <li>Transports intelligents</li>
                         <li>IoT</li>
                     </ul>
-                    <a href="formations.html">▶ Découvrir la filière</a>
+                    <a href="formations.html" data-i18n="btn_discover_filiere">▶ Découvrir la filière</a>
                 </article>
+            </div>
+        </section>
+
+        <section class="section light-section campus-gallery-section" aria-label="Vie de campus">
+            <div class="section-title">
+                <p class="eyebrow dark" data-i18n="campus_eyebrow">CAMPUS</p>
+                <h2 data-i18n="campus_h2">La vie à l'Efrei</h2>
+                <p data-i18n="campus_desc">Des espaces modernes, des labs équipés et une communauté internationale de passionnés.</p>
+            </div>
+            <div class="campus-gallery">
+                <figure class="campus-photo campus-photo--wide">
+                    <img src="img/campus-cowork.webp" alt="Étudiants en collaboration dans un espace de travail Efrei">
+                    <figcaption data-i18n="fig_cowork">Travail collaboratif</figcaption>
+                </figure>
+                <figure class="campus-photo">
+                    <img src="img/Efrei-plan-strategique.png" alt="Laboratoire informatique Efrei">
+                    <figcaption data-i18n="fig_lab">Laboratoire technique</figcaption>
+                </figure>
+                <figure class="campus-photo">
+                    <img src="img/campus-etudiants.jpg" alt="Étudiants sur le campus Efrei">
+                    <figcaption data-i18n="fig_student_life">Vie étudiante</figcaption>
+                </figure>
+                <figure class="campus-photo">
+                    <img src="img/campus-rooftop.jpg" alt="Campus Efrei Paris Villejuif">
+                    <figcaption data-i18n="fig_campus">Campus Villejuif</figcaption>
+                </figure>
+                <figure class="campus-photo">
+                    <img src="img/campus-hackathon.jpg" alt="Hackathon et événements étudiants Efrei">
+                    <figcaption data-i18n="fig_events">Événements &amp; Hackathons</figcaption>
+                </figure>
             </div>
         </section>
 
         <section class="section light-section">
             <div class="section-title">
-                <p class="eyebrow dark">ÉQUIPE</p>
-                <h2>Nos enseignants</h2>
+                <p class="eyebrow dark" data-i18n="team_eyebrow">ÉQUIPE</p>
+                <h2 data-i18n="team_h2">Nos enseignants</h2>
             </div>
             <div class="teacher-preview">
                 <article class="teacher-card">
                     <span>BC</span>
                     <h3>Ben Khelil C.</h3>
-                    <p>Enseignante-chercheuse</p>
-                    <small>Survol → matières</small>
+                    <p data-i18n="role_researcher">Enseignante-chercheuse</p>
+                    <small data-i18n="teacher_hover_hint">Survol → matières</small>
                 </article>
                 <article class="teacher-card">
                     <span>GW</span>
                     <h3>Gaaloul W.</h3>
-                    <p>Enseignant</p>
-                    <small>Survol → matières</small>
+                    <p data-i18n="role_teacher">Enseignant</p>
+                    <small data-i18n="teacher_hover_hint">Survol → matières</small>
                 </article>
                 <article class="teacher-card">
                     <span>KK</span>
                     <h3>Klai K.</h3>
-                    <p>Enseignant</p>
-                    <small>Survol → matières</small>
+                    <p data-i18n="role_teacher">Enseignant</p>
+                    <small data-i18n="teacher_hover_hint">Survol → matières</small>
                 </article>
                 <article class="teacher-card">
                     <span>TL</span>
                     <h3>Trebaul L.</h3>
-                    <p>Enseignante</p>
-                    <small>Survol → matières</small>
+                    <p data-i18n="role_teacher">Enseignant</p>
+                    <small data-i18n="teacher_hover_hint">Survol → matières</small>
                 </article>
             </div>
-            <a class="text-link" href="enseignants.html">Voir tous les enseignants →</a>
+            <a class="text-link" href="enseignants.html" data-i18n="btn_see_all_teachers">Voir tous les enseignants →</a>
         </section>
     </main>
 
@@ -178,7 +212,7 @@
             <a class="footer-logo" href="index.html" aria-label="Accueil Efrei Paris">
                 <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
             </a>
-            <p>École d'ingénieurs en informatique et technologies du numérique. Membre de Paris Panthéon-Assas Université.</p>
+            <p data-i18n="footer_desc">École d'ingénieurs en informatique et technologies du numérique. Membre de Paris Panthéon-Assas Université.</p>
             <div class="trust-box">
                 <span>CTI</span>
                 <span>CGE</span>
@@ -186,27 +220,28 @@
             </div>
         </div>
         <div>
-            <h2>FORMATIONS</h2>
-            <a href="formations.html">Prépa Intégrée</a>
-            <a href="formations.html">Cycle Ingénieur</a>
-            <a href="formations.html">Bachelor</a>
-            <a href="formations.html">Mastère</a>
+            <h2 data-i18n="footer_col_formations">FORMATIONS</h2>
+            <a href="formations.html" data-i18n="footer_prepa">Prépa Intégrée</a>
+            <a href="formations.html" data-i18n="footer_ing">Cycle Ingénieur</a>
+            <a href="formations.html" data-i18n="footer_bachelor">Bachelor</a>
+            <a href="formations.html" data-i18n="footer_mastere">Mastère</a>
         </div>
         <div>
-            <h2>DÉPARTEMENT</h2>
-            <a href="enseignants.html">Corps enseignant</a>
-            <a href="enseignants.html">Laboratoire</a>
-            <a href="about.html">À propos</a>
+            <h2 data-i18n="footer_col_dept">DÉPARTEMENT</h2>
+            <a href="enseignants.html" data-i18n="footer_faculty">Corps enseignant</a>
+            <a href="enseignants.html" data-i18n="footer_lab">Laboratoire</a>
+            <a href="about.html" data-i18n="footer_about">À propos</a>
         </div>
         <div>
-            <h2>CAMPUS</h2>
-            <a href="#">Paris - Villejuif</a>
-            <a href="#">Bordeaux</a>
-            <a href="#">Portes ouvertes</a>
+            <h2 data-i18n="footer_col_campus">CAMPUS</h2>
+            <a href="#" data-i18n="footer_paris">Paris - Villejuif</a>
+            <a href="#" data-i18n="footer_bordeaux">Bordeaux</a>
+            <a href="#" data-i18n="footer_opendays">Portes ouvertes</a>
         </div>
-        <p class="copyright">© 2026 Efrei Paris — Département Informatique · Mentions légales · Accessibilité</p>
+        <p class="copyright" data-i18n="footer_copyright">© 2026 Efrei Paris — Département Informatique · Mentions légales · Accessibilité</p>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script src="js/animations.js"></script>
 </body>

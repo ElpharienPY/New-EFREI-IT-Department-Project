@@ -9,9 +9,13 @@
 <body>
     <header class="site-header">
         <div class="top-bar">
-            <a href="#">International</a>
-            <a href="enseignants.html">Recherche et Faculté</a>
-            <span>FR | EN</span>
+            <a href="#" data-i18n="topbar_international">International</a>
+            <a href="enseignants.html" data-i18n="topbar_research">Recherche et Faculté</a>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
         </div>
         <nav class="main-nav">
             <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
@@ -19,12 +23,12 @@
             </a>
             <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="formations.html">Formations</a></li>
-                <li><a href="enseignants.html">Corps enseignant</a></li>
-                <li><a class="active" href="about.html">À propos</a></li>
-                <li><a class="nav-button" href="formations.html">Brochure</a></li>
-                <li><a class="nav-button yellow" href="candidature.html">Candidature</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="formations.html" data-i18n="nav_formations">Formations</a></li>
+                <li><a href="enseignants.html" data-i18n="nav_faculty">Corps enseignant</a></li>
+                <li><a class="active" href="about.html" data-i18n="nav_about">À propos</a></li>
+                <li><a class="nav-button" href="formations.html" data-i18n="nav_brochure">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html" data-i18n="nav_apply">Candidature</a></li>
             </ul>
         </nav>
     </header>
@@ -32,41 +36,41 @@
     <main>
         <section class="page-hero">
             <p class="page-number">02 / ABOUT US</p>
-            <p class="breadcrumb">Accueil › À propos</p>
-            <h1>À propos de nous</h1>
-            <p>Les étudiants derrière ce site — Département Informatique, Efrei Paris.</p>
+            <p class="breadcrumb" data-i18n="about_breadcrumb">Accueil › À propos</p>
+            <h1 data-i18n="about_h1">À propos de nous</h1>
+            <p data-i18n="about_hero_desc">Les étudiants derrière ce site — Département Informatique, Efrei Paris.</p>
         </section>
 
         <section class="section light-section">
             <div class="section-title">
-                <p class="eyebrow dark">L'ÉQUIPE</p>
-                <h2>Qui sommes-nous ?</h2>
-                <p>Deux étudiants en informatique, créateurs de ce site dans le cadre d'un projet académique.</p>
+                <p class="eyebrow dark" data-i18n="about_eyebrow">L'ÉQUIPE</p>
+                <h2 data-i18n="about_h2">Qui sommes-nous ?</h2>
+                <p data-i18n="about_team_desc">Deux étudiants en informatique, créateurs de ce site dans le cadre d'un projet académique.</p>
             </div>
             <div class="cards-grid two-columns">
                 <article class="profile-card">
-                    <span>AB</span>
-                    <h3>Prénom Nom</h3>
-                    <p class="role">Étudiant — Département Informatique</p>
-                    <p>Promotion 2027 · Efrei Paris</p>
-                    <p>Passionné par le développement web et les technologies du numérique. Je m'intéresse particulièrement au front-end et à l'expérience utilisateur.</p>
-                    <h4>COMPÉTENCES</h4>
+                    <img class="teacher-photo" src="https://github.com/ElpharienPY.png" alt="Raphaël Gastaldo">
+                    <h3>Raphaël Gastaldo</h3>
+                    <p class="role" data-i18n="about_role_raph">Étudiant — Département Informatique</p>
+                    <p data-i18n="about_promo_raph">P2 INT4 · Efrei Paris</p>
+                    <p data-i18n="about_desc_raph">Passionné par le développement web et les technologies du numérique. Je m'intéresse particulièrement au front-end et à l'expérience utilisateur.</p>
+                    <h4 data-i18n="skills_label">COMPÉTENCES</h4>
                     <div class="tag-list">
                         <span>HTML / CSS</span>
                         <span>JavaScript</span>
                         <span>Python</span>
-                        <span>Java</span>
-                        <span>UI Design</span>
+                        <span>Java OOP</span>
+                        <span>C</span>
                     </div>
-                    <p class="contact-line">✉ prenom.nom@efrei.net · LinkedIn · GitHub</p>
+                    <p class="contact-line">✉ raphael.gastaldo@efrei.net · <a href="https://github.com/ElpharienPY" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/raphaël-gastaldo-02739732b/" target="_blank" rel="noreferrer">LinkedIn</a></p>
                 </article>
                 <article class="profile-card">
-                    <span>CD</span>
-                    <h3>Prénom Nom</h3>
-                    <p class="role">Étudiant — Département Informatique</p>
-                    <p>Promotion 2027 · Efrei Paris</p>
-                    <p>Intéressé par les systèmes back-end et les architectures logicielles. Je développe des solutions robustes et performantes pour des projets variés.</p>
-                    <h4>COMPÉTENCES</h4>
+                    <img class="teacher-photo" src="https://github.com/H4di961.png" alt="Hadi Daccache">
+                    <h3>Hadi Daccache</h3>
+                    <p class="role" data-i18n="about_role_hadi">Étudiant — Département Informatique</p>
+                    <p data-i18n="about_promo_hadi">P2 INT4 · Efrei Paris</p>
+                    <p data-i18n="about_desc_hadi">Intéressé par les systèmes et les architectures logicielles. Je développe des solutions robustes et performantes pour des projets variés.</p>
+                    <h4 data-i18n="skills_label">COMPÉTENCES</h4>
                     <div class="tag-list">
                         <span>C / C++</span>
                         <span>Java OOP</span>
@@ -74,27 +78,38 @@
                         <span>Linux</span>
                         <span>Git</span>
                     </div>
-                    <p class="contact-line">✉ prenom.nom@efrei.net · LinkedIn · GitHub</p>
+                    <p class="contact-line">✉ hadi.daccache@efrei.net · <a href="https://github.com/H4di961" target="_blank" rel="noreferrer">GitHub</a></p>
                 </article>
             </div>
         </section>
 
-        <section class="section blue-section">
+        <section class="section light-section" aria-label="Documentation du projet">
+            <div class="section-title">
+                <p class="eyebrow dark" data-i18n="about_readme_eyebrow">DOCUMENTATION</p>
+                <h2 data-i18n="about_readme_h2">Comment avons-nous construit ce site ?</h2>
+                <p data-i18n="about_readme_desc">Retrouvez le détail de nos choix techniques, l'architecture du projet et notre transparence sur l'utilisation de l'IA.</p>
+            </div>
+            <div class="hero-actions">
+                <a class="button primary" href="readme.html" data-i18n="about_readme_cta">Lire le README →</a>
+            </div>
+        </section>
+
+        <section class="section blue-section" aria-label="Informations sur le projet">
             <div class="cards-grid three-columns">
                 <article class="info-card">
-                    <p>LE PROJET</p>
-                    <h3>Site du Département Informatique — Efrei</h3>
-                    <p>Ce site présente les formations, les matières enseignées et le corps enseignant du département.</p>
+                    <p data-i18n="project_label">LE PROJET</p>
+                    <h3 data-i18n="project_h3">Site du Département Informatique — Efrei</h3>
+                    <p data-i18n="project_desc">Ce site présente les formations, les matières enseignées et le corps enseignant du département.</p>
                 </article>
                 <article class="info-card">
-                    <p>FORMATION</p>
-                    <h3>Dépt. Informatique</h3>
-                    <p>Projet académique réalisé dans le cadre du cours de développement web TI402.</p>
+                    <p data-i18n="formation_label">FORMATION</p>
+                    <h3 data-i18n="formation_h3">Dépt. Informatique</h3>
+                    <p data-i18n="formation_desc">Projet académique réalisé dans le cadre du cours de développement web TI402.</p>
                 </article>
                 <article class="info-card">
-                    <p>TECHNOLOGIES</p>
-                    <h3>HTML CSS JS Vanilla</h3>
-                    <p>Le code respecte la consigne : aucune bibliothèque externe ni framework.</p>
+                    <p data-i18n="tech_label">TECHNOLOGIES</p>
+                    <h3 data-i18n="tech_h3">HTML CSS JS Vanilla</h3>
+                    <p data-i18n="tech_desc">Le code respecte la consigne : aucune bibliothèque externe ni framework.</p>
                 </article>
             </div>
         </section>
@@ -112,6 +127,7 @@
         </nav>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script src="js/animations.js"></script>
 </body>

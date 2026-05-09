@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README — Département Informatique</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .readme-body {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .readme-body h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin: 2.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--blue);
+        }
+
+        .readme-body h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 1.75rem 0 0.5rem;
+            color: #111;
+        }
+
+        .readme-body p {
+            line-height: 1.75;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .readme-body ul {
+            padding-left: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .readme-body ul li {
+            line-height: 1.75;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .readme-body code {
+            font-family: "Courier New", monospace;
+            font-size: 0.88rem;
+            background: #f0f2f5;
+            padding: 0.15em 0.45em;
+            border-radius: 4px;
+            color: #003a70;
+        }
+
+        .readme-body pre {
+            background: #f0f2f5;
+            border-left: 4px solid var(--blue);
+            padding: 1.25rem 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .readme-body pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.85rem;
+            color: #1a1a2e;
+        }
+
+        .readme-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.92rem;
+        }
+
+        .readme-table th {
+            background: var(--blue);
+            color: #fff;
+            text-align: left;
+            padding: 0.6rem 1rem;
+        }
+
+        .readme-table td {
+            padding: 0.55rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            color: #333;
+        }
+
+        .readme-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .readme-table tr:nth-child(even) td {
+            background: #f8f9fb;
+        }
+
+        .readme-ai-note {
+            background: #fff8e1;
+            border-left: 4px solid var(--yellow, #ffd200);
+            padding: 0.9rem 1.2rem;
+            border-radius: 4px;
+            margin: 0.75rem 0 1rem;
+            font-size: 0.93rem;
+            color: #444;
+        }
+
+        .readme-hr {
+            border: none;
+            border-top: 1px solid #e5e7eb;
+            margin: 2.5rem 0;
+        }
+
+        .readme-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.75rem 0 1rem;
+        }
+
+        .readme-tag-list span {
+            background: #e8f0fe;
+            color: var(--blue);
+            border-radius: 20px;
+            padding: 0.25rem 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="top-bar">
+            <a href="#" data-i18n="topbar_international">International</a>
+            <a href="enseignants.html" data-i18n="topbar_research">Recherche et Faculté</a>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
+                <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+            </a>
+            <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="formations.html" data-i18n="nav_formations">Formations</a></li>
+                <li><a href="enseignants.html" data-i18n="nav_faculty">Corps enseignant</a></li>
+                <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                <li><a class="nav-button" href="formations.html" data-i18n="nav_brochure">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html" data-i18n="nav_apply">Candidature</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p class="page-number">07 / README</p>
+            <p class="breadcrumb" data-i18n="readme_breadcrumb">Accueil › À propos › README</p>
+            <h1>README</h1>
+            <p data-i18n="readme_subtitle">Documentation technique — Département Informatique · Efrei Paris</p>
+        </section>
+
+        <section class="section light-section">
+            <div class="readme-body">
+
+                <p>Web project built for the course <strong>TI402 – Web Programming</strong> (P2 INT4).<br>
+                A showcase website for the Computer Science department of Efrei Paris, built with HTML5 / CSS3 / vanilla JavaScript — no framework, no external library.</p>
+                <p><strong>Students:</strong> Raphaël Gastaldo · Hadi Daccache</p>
+
+                <hr class="readme-hr">
+
+                <h2>Pages</h2>
+                <table class="readme-table">
+                    <thead>
+                        <tr><th>File</th><th>Content</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>index.html</code></td><td>Home — hero, programs, campus gallery, stats, quiz CTA</td></tr>
+                        <tr><td><code>formations.html</code></td><td>Detail of the 4 tracks with pinned horizontal scroll</td></tr>
+                        <tr><td><code>enseignants.html</code></td><td>Faculty members, filterable by category</td></tr>
+                        <tr><td><code>matiere-python.html</code></td><td>Python course spotlight (syllabus, video)</td></tr>
+                        <tr><td><code>about.html</code></td><td>Department overview and project team</td></tr>
+                        <tr><td><code>candidature.html</code></td><td>Application form with real-time validation</td></tr>
+                        <tr><td><code>quiz.html</code></td><td>Orientation quiz in 5 questions (bonus feature)</td></tr>
+                    </tbody>
+                </table>
+
+                <hr class="readme-hr">
+
+                <h2>Features</h2>
+
+                <h3>Navigation &amp; layout</h3>
+                <ul>
+                    <li>Responsive header with burger menu on mobile</li>
+                    <li>Top-bar hides on scroll to maximize screen space</li>
+                    <li>Footer present on every page</li>
+                </ul>
+
+                <h3>Application form (<code>candidature.html</code>)</h3>
+                <p>Fully client-side validation, no library:</p>
+                <ul>
+                    <li>Field-by-field check on <code>blur</code> (focus loss)</li>
+                    <li>Custom rules per field: minimum length, email format, optional phone via regex, mandatory GDPR checkbox</li>
+                    <li>Inline error messages displayed under each field</li>
+                    <li>Simulated form submission with visual feedback (disabled button → success message)</li>
+                </ul>
+                <div class="readme-ai-note">
+                    <strong>AI transparency:</strong> the validation rules object (character minimums, regex patterns for email and phone format) was designed with the assistance of Claude AI. Regular expressions in particular were not covered in our course — we used AI to generate and verify them, then integrated them into the validation logic ourselves.
+                </div>
+
+                <h3>Orientation quiz (<code>quiz.html</code> + <code>js/quiz.js</code>)</h3>
+                <p>5 questions to guide the user toward one of the 4 tracks (Data, IT, Security, Embedded):</p>
+                <ul>
+                    <li>Step-by-step navigation with a progress bar</li>
+                    <li>Category-based scoring: each answer increments a counter</li>
+                    <li>Result computed in plain JS (object <code>scores</code>, <code>Object.keys().reduce()</code>)</li>
+                    <li>Result displayed with a badge, description and tags — fully bilingual</li>
+                </ul>
+                <div class="readme-ai-note">
+                    <strong>AI transparency:</strong> we used Claude AI to get ideas for the questions and to think through the profile deduction logic. We wrote the JS code, HTML structure and CSS styles of the quiz ourselves.
+                </div>
+
+                <h3>Faculty filter (<code>enseignants.html</code>)</h3>
+                <ul>
+                    <li>Filter buttons by category (computer science, mathematics, management)</li>
+                    <li>Hovering or clicking a teacher card dynamically displays their subject list</li>
+                    <li>Implemented with <code>querySelectorAll</code>, <code>dataset</code>, and <code>hidden</code> attribute toggling</li>
+                </ul>
+
+                <h3>Animations (<code>js/animations.js</code>)</h3>
+                <ul>
+                    <li><strong>Page entrance:</strong> <code>&lt;main&gt;</code> slides up on load via a CSS transition triggered by <code>setTimeout</code></li>
+                    <li><strong>Scroll reveal:</strong> uses the <code>IntersectionObserver</code> API to trigger a CSS transition when an element enters the viewport. Cascade effect on grids via incremental <code>transitionDelay</code></li>
+                    <li><strong>Animated counters:</strong> stats on the home page count from 0 to their target value using <code>setInterval</code></li>
+                    <li><strong>Animated headings:</strong> words of each <code>&lt;h1&gt;</code> are split into <code>&lt;span&gt;</code> elements and appear one by one with an increasing delay</li>
+                </ul>
+
+                <h3>Pinned horizontal scroll (<code>formations.html</code>)</h3>
+                <p>The "training levels" section uses a horizontal scroll driven by the page's vertical scroll: the card strip moves horizontally as the user scrolls normally.</p>
+                <p>This technique is a reuse and adaptation of a mechanism Raphaël personally developed in a prior project (<a href="https://codeenclair.netlify.app" target="_blank" rel="noreferrer">codeenclair.netlify.app</a>). It relies on <code>getBoundingClientRect()</code> to calculate scroll progress within the pinned area and <code>transform: translateX()</code> to move the strip.</p>
+
+                <hr class="readme-hr">
+
+                <h2>FR / EN Internationalization</h2>
+                <p>The entire site is available in French and English. The language choice is persisted via <code>localStorage</code>.</p>
+                <p><strong>How it works:</strong> every text node in the interface has a <code>data-i18n</code> attribute with a key. The <code>applyTranslations()</code> function in <code>js/i18n.js</code> walks the DOM and replaces each element's <code>textContent</code> with the matching translation from the <code>translations</code> object.</p>
+                <div class="readme-ai-note">
+                    <strong>AI transparency:</strong> we designed the system architecture (<code>data-i18n</code> attributes, <code>localStorage</code> read/write, translation loop) with the assistance of Claude AI. We then wrote, reviewed and completed all translations (~80 FR + EN keys) manually, integrated them page by page, and adapted the system for the quiz's dynamic content.
+                </div>
+
+                <hr class="readme-hr">
+
+                <h2>Images &amp; media</h2>
+                <p>All campus photos on the site are <strong>real photos of Efrei Paris</strong> (Villejuif campus), sourced from official school resources.</p>
+                <ul>
+                    <li>Our profile pictures (<code>about.html</code>) are our GitHub avatars</li>
+                    <li>The Python video (<code>matiere-python.html</code>) is embedded via a YouTube <code>&lt;iframe&gt;</code></li>
+                </ul>
+                <p><strong>Note on Unsplash:</strong> during the early development phase, we used some placeholder images from Unsplash. Raphaël had picked up this habit while learning web development on his own, where Unsplash is a common resource for prototyping. We replaced all of them with real Efrei campus photos before the final version.</p>
+
+                <hr class="readme-hr">
+
+                <h2>W3C Validation</h2>
+                <p>Each HTML page was individually submitted to the <a href="https://validator.w3.org/" target="_blank" rel="noreferrer">W3C Markup Validation Service</a> using the file upload tool. All pages pass with no errors.</p>
+
+                <hr class="readme-hr">
+
+                <h2>Project structure</h2>
+                <pre><code>/
+├── index.html
+├── formations.html
+├── enseignants.html
+├── matiere-python.html
+├── about.html
+├── candidature.html
+├── quiz.html
+├── readme.html
+├── css/
+│   └── style.css
+├── js/
+│   ├── script.js       ← core interactions (menu, scroll, form, filters)
+│   ├── animations.js   ← visual effects (scroll reveal, counters, word split)
+│   ├── i18n.js         ← FR/EN translation engine
+│   └── quiz.js         ← orientation quiz logic
+└── img/
+    └── (Efrei campus photos)</code></pre>
+
+                <hr class="readme-hr">
+
+                <h2>Tech stack</h2>
+                <div class="readme-tag-list">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Vanilla JavaScript ES6+</span>
+                    <span>Flexbox &amp; Grid</span>
+                    <span>IntersectionObserver</span>
+                    <span>localStorage</span>
+                    <span>ARIA</span>
+                    <span>W3C validated</span>
+                </div>
+                <p>No framework, no external dependency (except the YouTube iframe and the Efrei SVG logo).</p>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer compact-footer">
+        <a class="footer-logo" href="index.html" aria-label="Accueil Efrei Paris">
+            <img src="https://www.efrei.fr/wp-content/themes/efrei/images/logo-efrei.svg" alt="Efrei Paris">
+        </a>
+        <p>© 2026 Efrei Paris — Département Informatique</p>
+        <nav>
+            <a href="index.html" data-i18n="nav_home">Accueil</a>
+            <a href="formations.html" data-i18n="nav_formations">Formations</a>
+            <a href="about.html" data-i18n="nav_about">À propos</a>
+        </nav>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

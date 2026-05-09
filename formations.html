@@ -9,9 +9,13 @@
 <body>
     <header class="site-header">
         <div class="top-bar">
-            <a href="#">International</a>
-            <a href="enseignants.html">Recherche et Faculté</a>
-            <span>FR | EN</span>
+            <a href="#" data-i18n="topbar_international">International</a>
+            <a href="enseignants.html" data-i18n="topbar_research">Recherche et Faculté</a>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
         </div>
         <nav class="main-nav">
             <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
@@ -19,12 +23,12 @@
             </a>
             <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a class="active" href="formations.html">Formations</a></li>
-                <li><a href="enseignants.html">Corps enseignant</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a class="nav-button" href="formations.html">Brochure</a></li>
-                <li><a class="nav-button yellow" href="candidature.html">Candidature</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a class="active" href="formations.html" data-i18n="nav_formations">Formations</a></li>
+                <li><a href="enseignants.html" data-i18n="nav_faculty">Corps enseignant</a></li>
+                <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                <li><a class="nav-button" href="formations.html" data-i18n="nav_brochure">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html" data-i18n="nav_apply">Candidature</a></li>
             </ul>
         </nav>
     </header>
@@ -32,19 +36,19 @@
     <main>
         <section class="page-hero">
             <p class="page-number">04 / FORMATIONS &amp; MATIÈRES</p>
-            <p class="breadcrumb">Accueil › Formations &amp; Matières</p>
-            <h1>Formations &amp; Matières</h1>
-            <p>Toutes les matières informatiques enseignées, niveau par niveau.</p>
+            <p class="breadcrumb" data-i18n="formations_breadcrumb">Accueil › Formations &amp; Matières</p>
+            <h1 data-i18n="formations_h1">Formations &amp; Matières</h1>
+            <p data-i18n="formations_page_desc">Toutes les matières informatiques enseignées, niveau par niveau.</p>
         </section>
 
         <section class="section light-section">
             <div class="scroll-heading">
                 <div>
-                    <p class="eyebrow dark">NIVEAUX</p>
-                    <h2>Faites défiler pour explorer chaque niveau</h2>
+                    <p class="eyebrow dark" data-i18n="formations_scroll_eyebrow">NIVEAUX</p>
+                    <h2 data-i18n="formations_scroll_h2">Faites défiler pour explorer chaque niveau</h2>
                 </div>
             </div>
-            <p class="hint">Scrollez vers le bas — les formations défilent horizontalement.</p>
+            <p class="hint" data-i18n="formations_hint">Scrollez vers le bas — les formations défilent horizontalement.</p>
         </section>
 
         <div class="levels-pinned-track" id="levels-track">
@@ -58,7 +62,7 @@
                         <div class="lc-glass">
                             <p class="lc-eyebrow">PGE</p>
                             <p class="lc-fullname">Prépa 1</p>
-                            <span class="lc-tag">Cycle Préparatoire</span>
+                            <span class="lc-tag" data-i18n="lc_tag_prepa">Cycle Préparatoire</span>
                             <ul class="lc-subjects">
                                 <li>Python</li>
                                 <li>Algorithmique</li>
@@ -77,7 +81,7 @@
                         <div class="lc-glass">
                             <p class="lc-eyebrow">PGE</p>
                             <p class="lc-fullname">Prépa 2</p>
-                            <span class="lc-tag">Cycle Préparatoire</span>
+                            <span class="lc-tag" data-i18n="lc_tag_prepa">Cycle Préparatoire</span>
                             <ul class="lc-subjects">
                                 <li>Prog. C</li>
                                 <li>SDD</li>
@@ -99,7 +103,7 @@
                         <div class="lc-glass">
                             <p class="lc-eyebrow">PGE</p>
                             <p class="lc-fullname">ING1</p>
-                            <span class="lc-tag">Cycle Ingénieur</span>
+                            <span class="lc-tag" data-i18n="lc_tag_ing">Cycle Ingénieur</span>
                             <ul class="lc-subjects">
                                 <li>Network &amp; Protocols</li>
                                 <li>Intro Cybersécurité</li>
@@ -120,7 +124,7 @@
                         <div class="lc-glass">
                             <p class="lc-eyebrow">PGE</p>
                             <p class="lc-fullname">ING2 &amp; ING3</p>
-                            <span class="lc-tag">Spécialisation</span>
+                            <span class="lc-tag" data-i18n="lc_tag_spe">Spécialisation</span>
                             <ul class="lc-subjects">
                                 <li>Data Science</li>
                                 <li>Info. Technology</li>
@@ -139,7 +143,7 @@
                         <div class="lc-glass">
                             <p class="lc-eyebrow">PEX</p>
                             <p class="lc-fullname">BTS SIO</p>
-                            <span class="lc-tag">Formation BTS</span>
+                            <span class="lc-tag" data-i18n="lc_tag_bts">Formation BTS</span>
                             <ul class="lc-subjects">
                                 <li>Services info. org.</li>
                                 <li>BTS1 &amp; BTS2</li>
@@ -158,7 +162,7 @@
                         <div class="lc-glass">
                             <p class="lc-eyebrow">PEX</p>
                             <p class="lc-fullname">Bachelor</p>
-                            <span class="lc-tag">Formation Bachelor</span>
+                            <span class="lc-tag" data-i18n="lc_tag_bach">Formation Bachelor</span>
                             <ul class="lc-subjects">
                                 <li>Informatique</li>
                                 <li>Dév. Web &amp; IA</li>
@@ -177,7 +181,7 @@
                         <div class="lc-glass">
                             <p class="lc-eyebrow">PEX</p>
                             <p class="lc-fullname">Mastère</p>
-                            <span class="lc-tag">Formation Mastère</span>
+                            <span class="lc-tag" data-i18n="lc_tag_mast">Formation Mastère</span>
                             <ul class="lc-subjects">
                                 <li>Dev. Full Stack</li>
                                 <li>Data Engineering &amp; IA</li>
@@ -195,42 +199,42 @@
 
         <section class="section blue-section">
             <div class="section-title">
-                <p class="eyebrow">VUE COMPLÈTE</p>
-                <h2>Toutes les formations par programme</h2>
+                <p class="eyebrow" data-i18n="table_eyebrow">VUE COMPLÈTE</p>
+                <h2 data-i18n="table_h2">Toutes les formations par programme</h2>
             </div>
             <table class="program-table">
                 <thead>
                     <tr>
-                        <th>Programme</th>
-                        <th>Niveau</th>
-                        <th>Matières principales</th>
-                        <th>Détail</th>
+                        <th data-i18n="table_col1">Programme</th>
+                        <th data-i18n="table_col2">Niveau</th>
+                        <th data-i18n="table_col3">Matières principales</th>
+                        <th data-i18n="table_col4">Détail</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>P1 — Prépa 1</td>
-                        <td>Cycle préparatoire</td>
-                        <td>Python, Algorithmique, C, Complexité</td>
+                        <td data-i18n="lc_tag_prepa">Cycle préparatoire</td>
+                        <td data-i18n="table_p1_subjects">Python, Algorithmique, C, Complexité</td>
                         <td><a href="matiere-python.html">Python</a></td>
                     </tr>
                     <tr>
                         <td>P2 — Prépa 2</td>
-                        <td>Cycle préparatoire</td>
-                        <td>SDD, Linux, Réseaux, Bases de données</td>
-                        <td><a href="#">Voir</a></td>
+                        <td data-i18n="lc_tag_prepa">Cycle préparatoire</td>
+                        <td data-i18n="table_p2_subjects">SDD, Linux, Réseaux, Bases de données</td>
+                        <td><a href="#" data-i18n="table_see">Voir</a></td>
                     </tr>
                     <tr>
                         <td>ING1</td>
-                        <td>Cycle ingénieur</td>
-                        <td>OS, Web avancé, UML, Machine Learning</td>
-                        <td><a href="#">Voir</a></td>
+                        <td data-i18n="lc_tag_ing">Cycle ingénieur</td>
+                        <td data-i18n="table_ing1_subjects">OS, Web avancé, UML, Machine Learning</td>
+                        <td><a href="#" data-i18n="table_see">Voir</a></td>
                     </tr>
                     <tr>
                         <td>ING2 / ING3</td>
-                        <td>Spécialisation</td>
-                        <td>Data, sécurité, réseaux, embarqué</td>
-                        <td><a href="#">Voir</a></td>
+                        <td data-i18n="lc_tag_spe">Spécialisation</td>
+                        <td data-i18n="table_ing23_subjects">Data, sécurité, réseaux, embarqué</td>
+                        <td><a href="#" data-i18n="table_see">Voir</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -249,6 +253,7 @@
         </nav>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script src="js/animations.js"></script>
 </body>

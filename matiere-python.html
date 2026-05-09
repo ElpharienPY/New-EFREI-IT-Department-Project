@@ -9,9 +9,13 @@
 <body>
     <header class="site-header">
         <div class="top-bar">
-            <a href="#">International</a>
-            <a href="enseignants.html">Recherche et Faculté</a>
-            <span>FR | EN</span>
+            <a href="#" data-i18n="topbar_international">International</a>
+            <a href="enseignants.html" data-i18n="topbar_research">Recherche et Faculté</a>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" data-lang="fr">FR</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
         </div>
         <nav class="main-nav">
             <a class="logo" href="index.html" aria-label="Accueil Efrei Paris">
@@ -19,64 +23,64 @@
             </a>
             <button class="menu-button" type="button" aria-label="Ouvrir le menu">☰</button>
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a class="active" href="formations.html">Formations</a></li>
-                <li><a href="enseignants.html">Corps enseignant</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a class="nav-button" href="formations.html">Brochure</a></li>
-                <li><a class="nav-button yellow" href="candidature.html">Candidature</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                <li><a class="active" href="formations.html" data-i18n="nav_formations">Formations</a></li>
+                <li><a href="enseignants.html" data-i18n="nav_faculty">Corps enseignant</a></li>
+                <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                <li><a class="nav-button" href="formations.html" data-i18n="nav_brochure">Brochure</a></li>
+                <li><a class="nav-button yellow" href="candidature.html" data-i18n="nav_apply">Candidature</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="course-hero">
-            <a class="back-link" href="formations.html">← Retour à P1</a>
+            <a class="back-link" href="formations.html" data-i18n="python_back">← Retour à P1</a>
             <p>| Niveau 01 — Prépa 1 · Matière 3 / 4</p>
             <p class="eyebrow">P1 — FORMATION 03</p>
-            <h1>PYTHON</h1>
-            <p>Le langage le plus populaire au monde. Polyvalent, lisible, et incontournable pour débuter en programmation et en data science.</p>
+            <h1 data-i18n="python_h1">PYTHON</h1>
+            <p data-i18n="python_desc">Le langage le plus populaire au monde. Polyvalent, lisible, et incontournable pour débuter en programmation et en data science.</p>
             <div class="tag-list">
-                <span>DÉBUTANT</span>
-                <span>IA &amp; DATA SCIENCE</span>
+                <span data-i18n="python_tag_beginner">DÉBUTANT</span>
+                <span data-i18n="python_tag_ai">IA &amp; DATA SCIENCE</span>
             </div>
         </section>
 
-        <section class="stats-section">
-            <article>
+        <div class="stats-section">
+            <div>
                 <strong>20H</strong>
-                <span>de cours</span>
-            </article>
-            <article>
+                <span data-i18n="python_stat1">de cours</span>
+            </div>
+            <div>
                 <strong>12</strong>
-                <span>chapitres</span>
-            </article>
-            <article>
+                <span data-i18n="python_stat2">chapitres</span>
+            </div>
+            <div>
                 <strong>48</strong>
-                <span>exercices</span>
-            </article>
-            <article>
+                <span data-i18n="python_stat3">exercices</span>
+            </div>
+            <div>
                 <strong>4.9</strong>
-                <span>note moy.</span>
-            </article>
-        </section>
+                <span data-i18n="python_stat4">note moy.</span>
+            </div>
+        </div>
 
-        <section class="section light-section course-grid">
+        <section class="section light-section course-grid" aria-label="Programme du cours Python">
             <article>
-                <h2>PROGRAMME DU COURS</h2>
+                <h2 data-i18n="python_prog_h2">PROGRAMME DU COURS</h2>
                 <ol class="number-list">
-                    <li>Variables, types &amp; opérateurs</li>
-                    <li>Boucles, conditions &amp; fonctions</li>
-                    <li>Listes, dictionnaires, tuples</li>
-                    <li>Programmation orientée objet</li>
-                    <li>Manipulation de fichiers &amp; JSON</li>
-                    <li>Librairies essentielles</li>
-                    <li>Gestion d'erreurs &amp; tests</li>
-                    <li>Mini-projets concrets</li>
+                    <li data-i18n="python_li1">Variables, types &amp; opérateurs</li>
+                    <li data-i18n="python_li2">Boucles, conditions &amp; fonctions</li>
+                    <li data-i18n="python_li3">Listes, dictionnaires, tuples</li>
+                    <li data-i18n="python_li4">Programmation orientée objet</li>
+                    <li data-i18n="python_li5">Manipulation de fichiers &amp; JSON</li>
+                    <li data-i18n="python_li6">Librairies essentielles</li>
+                    <li data-i18n="python_li7">Gestion d'erreurs &amp; tests</li>
+                    <li data-i18n="python_li8">Mini-projets concrets</li>
                 </ol>
             </article>
             <article class="code-card">
-                <h2>APERÇU DU CODE</h2>
+                <h2 data-i18n="python_code_h2">APERÇU DU CODE</h2>
                 <pre><code># Formation Python — Leçon 1
 def saluer(nom: str) -> str:
     return f"Bienvenue, {nom}!"
@@ -88,25 +92,41 @@ for e in etudiants:
             </article>
         </section>
 
-        <section class="section blue-section">
+        <section class="section light-section video-section" aria-label="Vidéo d'introduction Python">
+            <div class="section-title">
+                <p class="eyebrow dark" data-i18n="python_video_eyebrow">VIDÉO</p>
+                <h2 data-i18n="python_video_h2">Introduction à Python en vidéo</h2>
+            </div>
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/kqtD5dpn9C8"
+                    title="Python Tutorial for Beginners"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section blue-section" aria-label="Points clés du cours Python">
             <div class="cards-grid two-columns">
                 <article class="info-card">
-                    <h2>POURQUOI PYTHON ?</h2>
-                    <p>Langage n°1 mondial selon TIOBE. Utilisé par Google, Netflix et la NASA. Porte d'entrée vers l'IA, la data science et l'automatisation.</p>
+                    <h2 data-i18n="python_why_h2">POURQUOI PYTHON ?</h2>
+                    <p data-i18n="python_why_desc">Langage n°1 mondial selon TIOBE. Utilisé par Google, Netflix et la NASA. Porte d'entrée vers l'IA, la data science et l'automatisation.</p>
                 </article>
                 <article class="info-card">
-                    <h2>CE QUE TU SAURAS FAIRE</h2>
+                    <h2 data-i18n="python_skills_h2">CE QUE TU SAURAS FAIRE</h2>
                     <ul>
-                        <li>Écrire des scripts Python complets</li>
-                        <li>Manipuler des structures de données</li>
-                        <li>Créer des fonctions réutilisables</li>
-                        <li>Lire et écrire des fichiers</li>
+                        <li data-i18n="python_skill1">Écrire des scripts Python complets</li>
+                        <li data-i18n="python_skill2">Manipuler des structures de données</li>
+                        <li data-i18n="python_skill3">Créer des fonctions réutilisables</li>
+                        <li data-i18n="python_skill4">Lire et écrire des fichiers</li>
                     </ul>
                 </article>
             </div>
             <div class="course-navigation">
-                <a href="formations.html">← Matière précédente</a>
-                <a href="formations.html">Matière suivante →</a>
+                <a href="formations.html" data-i18n="btn_prev_subject">← Matière précédente</a>
+                <a href="formations.html" data-i18n="btn_next_subject">Matière suivante →</a>
             </div>
         </section>
     </main>
@@ -123,6 +143,7 @@ for e in etudiants:
         </nav>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script src="js/animations.js"></script>
 </body>

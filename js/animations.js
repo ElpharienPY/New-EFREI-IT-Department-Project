@@ -1,42 +1,30 @@
-/**
- * animations.js — Global animations, vanilla JS
- *
- * 1. Page entrance    — main fade + slide on load
- * 2. Scroll reveal    — IntersectionObserver, stagger auto dans les grids
- * 3. Counter          — chiffres .stats-section comptent vers la cible
- * 4. Word split       — h1 se révèlent mot par mot
- * 5. Magnetic buttons — CTA attirent légèrement le curseur
- */
+// animations.js - visual effects (scroll reveal, counters, headings)
 
 document.addEventListener("DOMContentLoaded", () => {
     initPageEntrance();
     initScrollReveal();
     initCounters();
     initWordSplit();
-    initMagneticButtons();
 });
 
-// ─────────────────────────────────────────────────────
-// 1. Page entrance
-// ─────────────────────────────────────────────────────
+// slide the page up on load so it doesn't just appear instantly
 function initPageEntrance() {
     const main = document.querySelector("main");
     if (!main) return;
 
-    main.style.cssText = "opacity:0; transform:translateY(18px); transition:opacity 0.55s ease, transform 0.55s ease;";
+    main.style.opacity = "0";
+    main.style.transform = "translateY(18px)";
+    main.style.transition = "opacity 0.55s ease, transform 0.55s ease";
 
-    // Double rAF pour s'assurer que le navigateur a peint l'état initial
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            main.style.opacity = "1";
-            main.style.transform = "translateY(0)";
-        });
-    });
+    // setTimeout with a tiny delay so the browser actually renders the hidden state first
+    // without this, the transition doesn't play because the start and end states are set too close together
+    setTimeout(() => {
+        main.style.opacity = "1";
+        main.style.transform = "translateY(0)";
+    }, 50);
 }
 
-// ─────────────────────────────────────────────────────
-// 2. Scroll reveal
-// ─────────────────────────────────────────────────────
+// elements that should animate in when they enter the screen
 const REVEAL_TARGETS = [
     ".section-title",
     ".scroll-heading",
@@ -53,48 +41,49 @@ const REVEAL_TARGETS = [
     ".page-hero > p",
     ".hero-text > p",
     ".hero-actions",
+    ".quiz-answer",
+    ".quiz-question h2",
+    ".quiz-progress-track",
+    ".quiz-result-badge",
 ].join(", ");
 
 function initScrollReveal() {
     const elements = document.querySelectorAll(REVEAL_TARGETS);
     if (!elements.length) return;
 
-    // Stagger automatique pour les enfants directs de grids
-    const STAGGER_PARENTS = ".cards-grid, .teacher-preview, .teacher-list, .stats-section";
-    document.querySelectorAll(STAGGER_PARENTS).forEach(grid => {
+    // for grids of cards, we add a small CSS delay to each child so they appear one after another
+    // instead of all at once — looks much better visually
+    const gridParents = ".cards-grid, .teacher-preview, .teacher-list, .stats-section, .quiz-answers";
+    document.querySelectorAll(gridParents).forEach(grid => {
         Array.from(grid.children).forEach((child, i) => {
-            child.dataset.staggerDelay = (i * 100).toString(); // ms
+            child.style.transitionDelay = (i * 100) + "ms";
         });
     });
 
+    // IntersectionObserver fires a callback when an element becomes visible in the viewport
+    // we found this on MDN — it's cleaner than listening to the scroll event and manually
+    // checking element positions with getBoundingClientRect() on every scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
-
-            const el = entry.target;
-            const delay = parseInt(el.dataset.staggerDelay || "0");
-
-            setTimeout(() => el.classList.add("is-revealed"), delay);
-            observer.unobserve(el);
+            entry.target.classList.add("is-revealed");
+            // unobserve once revealed so we don't keep watching elements we already animated
+            observer.unobserve(entry.target);
         });
-    }, {
-        threshold: 0.08,
-        rootMargin: "0px 0px -32px 0px",
-    });
+    }, { threshold: 0.1 }); // trigger when at least 10% of the element is visible
 
     elements.forEach(el => {
-        el.classList.add("reveal-ready");
+        el.classList.add("reveal-ready"); // sets opacity:0 and translateY via CSS
         observer.observe(el);
     });
 }
 
-// ─────────────────────────────────────────────────────
-// 3. Counter animation
-// ─────────────────────────────────────────────────────
+// animate the stat counters from 0 to their target value
 function initCounters() {
     const counters = document.querySelectorAll(".stats-section strong");
     if (!counters.length) return;
 
+    // only start the animation when the stats section is actually visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
@@ -107,78 +96,47 @@ function initCounters() {
 }
 
 function animateCounter(el) {
+    // we need to separate the number from any suffix (e.g. "1 200+" → number: 1200, suffix: "+")
     const raw = el.textContent.trim();
-    // Capture la partie numérique (avec espaces éventuels) et le suffixe
     const match = raw.match(/^([\d\s]+)(.*)/);
     if (!match) return;
 
     const target = parseInt(match[1].replace(/\s/g, ""), 10);
-    const suffix = match[2]; // "+", "%", " ans"…
-    const duration = 1800;
-    const startTime = performance.now();
+    const suffix = match[2];
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
 
-    function tick(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease out quart
-        const eased = 1 - Math.pow(1 - progress, 4);
-        const current = Math.round(eased * target);
-
-        // Format français : séparateur de milliers = espace
-        el.textContent = current.toLocaleString("fr-FR") + suffix;
-
-        if (progress < 1) requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
+    // setInterval ticks every 25ms → 60 steps × 25ms = 1500ms total duration
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            el.textContent = target.toLocaleString("fr-FR") + suffix;
+            clearInterval(timer);
+        } else {
+            el.textContent = Math.round(current).toLocaleString("fr-FR") + suffix;
+        }
+    }, 25);
 }
 
-// ─────────────────────────────────────────────────────
-// 4. Word split (h1)
-// ─────────────────────────────────────────────────────
+// split h1 words into individual spans so each word can animate in separately
 function initWordSplit() {
     const headings = document.querySelectorAll(".hero h1, .page-hero h1");
     if (!headings.length) return;
 
     headings.forEach(h => {
         const words = h.textContent.trim().split(/\s+/);
+        // each word gets a slightly longer transition-delay than the previous one
         h.innerHTML = words
             .map((word, i) =>
-                `<span class="ws-wrap" style="--wi:${i}"><span class="ws-word">${word}</span></span>`
+                `<span class="ws-wrap"><span class="ws-word" style="transition-delay:${i * 90}ms">${word}</span></span>`
             )
             .join(" ");
         h.classList.add("ws-ready");
     });
 
-    // Déclencher après l'entrance de la page
+    // small timeout so the initial hidden state is painted before we trigger the animation
     setTimeout(() => {
         headings.forEach(h => h.classList.add("ws-visible"));
     }, 180);
-}
-
-// ─────────────────────────────────────────────────────
-// 5. Magnetic buttons
-// ─────────────────────────────────────────────────────
-function initMagneticButtons() {
-    // Désactivé sur tactile
-    if (window.matchMedia("(hover: none)").matches) return;
-
-    const targets = document.querySelectorAll(".button, .nav-button.yellow");
-
-    targets.forEach(btn => {
-        btn.addEventListener("mousemove", (e) => {
-            const rect = btn.getBoundingClientRect();
-            const cx = rect.left + rect.width / 2;
-            const cy = rect.top + rect.height / 2;
-            const dx = (e.clientX - cx) * 0.3;
-            const dy = (e.clientY - cy) * 0.3;
-            btn.style.transition = "transform 0.1s ease";
-            btn.style.transform = `translate(${dx}px, ${dy}px)`;
-        });
-
-        btn.addEventListener("mouseleave", () => {
-            btn.style.transition = "transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
-            btn.style.transform = "";
-        });
-    });
 }
