@@ -234,6 +234,16 @@ const translations = {
         opt_licence: "Licence / Bachelor",
         opt_master: "Master / Mastère",
         opt_autre: "Autre",
+        optgroup_pge: "PGE — Programme Grande École",
+        optgroup_pex: "Formations PEX",
+        opt_form_p1: "P1 — Prépa 1",
+        opt_form_p2: "P2 — Prépa 2",
+        opt_form_ing1: "ING1",
+        opt_form_ing2: "ING2",
+        opt_form_ing3: "ING3",
+        opt_form_bachelor: "Bachelor (B1–B3)",
+        opt_form_mastere: "Mastère (M1/M2)",
+        opt_form_bts: "BTS SIO",
 
         // formations — level tags & table
         lc_tag_prepa: "Cycle Préparatoire",
@@ -247,6 +257,24 @@ const translations = {
         table_ing1_subjects: "OS, Web avancé, UML, Machine Learning",
         table_ing23_subjects: "Data, sécurité, réseaux, embarqué",
         table_see: "Voir",
+
+        // enseignants — office hours section
+        oh_eyebrow: "PERMANENCES",
+        oh_h2: "Horaires de permanence des enseignants",
+        oh_desc: "Consultez les disponibilités des professeurs pour les rendez-vous et demandes académiques.",
+        oh_subject_label: "Matière :",
+        oh_subject_all: "Toutes les matières",
+        oh_search_label: "Chercher un professeur :",
+        oh_search_placeholder: "Nom du professeur...",
+        oh_prev_week: "← Semaine précédente",
+        oh_next_week: "Semaine suivante →",
+        oh_time_col: "Heure",
+        oh_monday: "Lundi",
+        oh_tuesday: "Mardi",
+        oh_wednesday: "Mercredi",
+        oh_thursday: "Jeudi",
+        oh_friday: "Vendredi",
+        oh_list_title: "Liste des permanences",
 
         // enseignants — roles, hints, research axes
         role_researcher: "Enseignante-chercheuse",
@@ -537,6 +565,16 @@ const translations = {
         opt_licence: "Bachelor's degree",
         opt_master: "Master's degree",
         opt_autre: "Other",
+        optgroup_pge: "PGE — Grande École Programme",
+        optgroup_pex: "PEX Programs",
+        opt_form_p1: "P1 — Prep Year 1",
+        opt_form_p2: "P2 — Prep Year 2",
+        opt_form_ing1: "ING1",
+        opt_form_ing2: "ING2",
+        opt_form_ing3: "ING3",
+        opt_form_bachelor: "Bachelor (B1–B3)",
+        opt_form_mastere: "Master's (M1/M2)",
+        opt_form_bts: "BTS SIO",
 
         // formations — level tags & table
         lc_tag_prepa: "Preparatory Cycle",
@@ -550,6 +588,24 @@ const translations = {
         table_ing1_subjects: "OS, Advanced Web, UML, Machine Learning",
         table_ing23_subjects: "Data, security, networks, embedded",
         table_see: "View",
+
+        // enseignants — office hours section
+        oh_eyebrow: "OFFICE HOURS",
+        oh_h2: "Faculty office hours",
+        oh_desc: "Check professor availability for appointments and academic inquiries.",
+        oh_subject_label: "Subject:",
+        oh_subject_all: "All subjects",
+        oh_search_label: "Search a professor:",
+        oh_search_placeholder: "Professor name...",
+        oh_prev_week: "← Previous week",
+        oh_next_week: "Next week →",
+        oh_time_col: "Time",
+        oh_monday: "Monday",
+        oh_tuesday: "Tuesday",
+        oh_wednesday: "Wednesday",
+        oh_thursday: "Thursday",
+        oh_friday: "Friday",
+        oh_list_title: "Office hours list",
 
         // enseignants — roles, hints, research axes
         role_researcher: "Associate Professor",
@@ -619,6 +675,13 @@ function applyTranslations(lang) {
         const key = el.getAttribute("data-i18n-placeholder");
         if (translations[lang]?.[key] !== undefined) {
             el.placeholder = translations[lang][key];
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-label]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-label");
+        if (translations[lang]?.[key] !== undefined) {
+            el.label = translations[lang][key];
         }
     });
 

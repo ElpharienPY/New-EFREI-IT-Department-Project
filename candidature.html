@@ -183,18 +183,18 @@
                     <div class="form-group">
                         <label for="formation"><span data-i18n="label_formation">Formation visée</span> <span aria-hidden="true">*</span></label>
                         <select id="formation" name="formation" required>
-                            <option value="">-- Sélectionnez --</option>
-                            <optgroup label="PGE — Programme Grande École">
-                                <option value="p1">P1 — Prépa 1</option>
-                                <option value="p2">P2 — Prépa 2</option>
-                                <option value="ing1">ING1</option>
-                                <option value="ing2">ING2</option>
-                                <option value="ing3">ING3</option>
+                            <option value="" data-i18n="opt_select">-- Sélectionnez --</option>
+                            <optgroup data-i18n-label="optgroup_pge" label="PGE — Programme Grande École">
+                                <option value="p1" data-i18n="opt_form_p1">P1 — Prépa 1</option>
+                                <option value="p2" data-i18n="opt_form_p2">P2 — Prépa 2</option>
+                                <option value="ing1" data-i18n="opt_form_ing1">ING1</option>
+                                <option value="ing2" data-i18n="opt_form_ing2">ING2</option>
+                                <option value="ing3" data-i18n="opt_form_ing3">ING3</option>
                             </optgroup>
-                            <optgroup label="Formations PEX">
-                                <option value="bachelor">Bachelor (B1–B3)</option>
-                                <option value="mastere">Mastère (M1/M2)</option>
-                                <option value="bts">BTS SIO</option>
+                            <optgroup data-i18n-label="optgroup_pex" label="Formations PEX">
+                                <option value="bachelor" data-i18n="opt_form_bachelor">Bachelor (B1–B3)</option>
+                                <option value="mastere" data-i18n="opt_form_mastere">Mastère (M1/M2)</option>
+                                <option value="bts" data-i18n="opt_form_bts">BTS SIO</option>
                             </optgroup>
                         </select>
                         <span class="field-error" id="formation-error" role="alert"></span>
