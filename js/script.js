@@ -40,7 +40,6 @@ const levelsStrip = document.getElementById("levels-strip");
 
 if (levelsPinnedTrack && levelsStrip) {
     let totalWidth = levelsStrip.scrollWidth;
-    let ticking = false;
 
     function updateLevelsScroll() {
         // trackHeight is how many pixels of vertical scroll we have available for this section
@@ -56,16 +55,7 @@ if (levelsPinnedTrack && levelsStrip) {
         levelsStrip.style.transform = `translateX(${-progress * maxScroll}px)`;
     }
 
-    // ticking prevents running the calculation more than once per animation frame
-    window.addEventListener("scroll", () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                updateLevelsScroll();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
+    window.addEventListener("scroll", updateLevelsScroll);
 
     window.addEventListener("resize", () => {
         totalWidth = levelsStrip.scrollWidth;
@@ -142,10 +132,16 @@ if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // validate all fields at once and collect the results
-        const fieldsValid = Object.keys(rules).map((id) => validateField(id));
-        const checkboxValid = validateCheckbox();
-        const allValid = fieldsValid.every(Boolean) && checkboxValid;
+        // validate all fields and track whether everything is valid
+        let allValid = true;
+        if (!validateField("prenom")) allValid = false;
+        if (!validateField("nom")) allValid = false;
+        if (!validateField("email")) allValid = false;
+        if (!validateField("telephone")) allValid = false;
+        if (!validateField("niveau")) allValid = false;
+        if (!validateField("formation")) allValid = false;
+        if (!validateField("message")) allValid = false;
+        if (!validateCheckbox()) allValid = false;
 
         if (!allValid) {
             // focus the first invalid field so the user knows where to look

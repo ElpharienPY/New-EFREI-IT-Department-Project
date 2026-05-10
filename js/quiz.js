@@ -123,9 +123,13 @@ function showResult() {
 
     const lang = getCurrentLang();
 
-    // find the track with the highest score using reduce()
-    // Object.entries gives us [["data", 2], ["it", 1], ...] and reduce keeps the one with the biggest value
-    const winner = Object.entries(scores).reduce((a, b) => (b[1] > a[1] ? b : a))[0];
+    // find the track with the highest score
+    let winner = "data";
+    for (let track in scores) {
+        if (scores[track] > scores[winner]) {
+            winner = track;
+        }
+    }
     const result = RESULTS[lang][winner];
 
     document.getElementById("result-badge").textContent = result.badge;
